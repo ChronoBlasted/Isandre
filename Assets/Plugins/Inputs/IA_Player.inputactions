@@ -1,0 +1,18 @@
+{
+    "name": "IA_Player",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "891f9c7c-8eec-4854-be6c-ed02d5ce320f",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
+        }
+    ]
+}
