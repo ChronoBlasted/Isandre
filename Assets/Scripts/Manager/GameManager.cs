@@ -19,6 +19,8 @@ public class GameManager : MonoSingleton<GameManager>
 
         UIManager.Instance.Init();
 
+        CameraManager.Instance.Init();
+
         UpdateStateToMenu();
     }
 
