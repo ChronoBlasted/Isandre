@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class CameraManager : MonoSingleton<CameraManager>
 {
-    [SerializeField] CinemachineShake cinemachineShake;
+    public Camera currentCamera;
 
+    [SerializeField] CinemachineShake cinemachineShake;
     public void Init()
     {
+
     }
 
     public void ShakeCamera(float intensity = 4, float duration = .125f)
