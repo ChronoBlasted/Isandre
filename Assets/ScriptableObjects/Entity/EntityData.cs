@@ -6,6 +6,7 @@ using UnityEngine;
 public class EntityData : ScriptableObject
 {
     public int health;
-    public float movementSpeed;
-    public float dashSpeed;
+    public float walkSpeed;
+    public float runSpeed;
+    public float dashForce;
 }

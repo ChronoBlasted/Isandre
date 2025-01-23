@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PlayerEntityData
   m_EditorClassIdentifier: 
   health: 100
-  movementSpeed: 7
-  dashSpeed: 20
+  walkSpeed: 4
+  runSpeed: 7
+  dashForce: 20

@@ -53,6 +53,15 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e4a062d-08f7-44ac-94e4-bbea4548e5b9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -125,11 +134,22 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""212215b5-0785-4330-804d-2d48114896a8"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25d0d11e-5220-47da-814c-8b756ba89dd6"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -149,6 +169,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MouseCursor = m_Player.FindAction("MouseCursor", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
     }
 
     ~@IA_Player()
@@ -218,6 +239,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MouseCursor;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_Run;
     public struct PlayerActions
     {
         private @IA_Player m_Wrapper;
@@ -225,6 +247,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MouseCursor => m_Wrapper.m_Player_MouseCursor;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -243,6 +266,9 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Run.started += instance.OnRun;
+            @Run.performed += instance.OnRun;
+            @Run.canceled += instance.OnRun;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -256,6 +282,9 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Run.started -= instance.OnRun;
+            @Run.performed -= instance.OnRun;
+            @Run.canceled -= instance.OnRun;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -287,5 +316,6 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnMouseCursor(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
     }
 }

@@ -8,26 +8,44 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] EntityData data;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] InputActionReference movement, dash, mousePos;
+    [SerializeField] Rigidbody rb;
+    [SerializeField] InputActionReference movement, dash, run, mousePos;
 
     Camera cam;
+    PlayerManager pManager;
     Vector2 movementInput, mousePosition;
     Vector3 positionToLook;
+    bool isRunning;
 
     private void Start()
     {
         cam = CameraManager.Instance.currentCamera;
+        pManager = PlayerManager.Instance;
     }
 
     void Update()
     {
         movementInput = movement.action.ReadValue<Vector2>();
         mousePosition = mousePos.action.ReadValue<Vector2>();
+        isRunning = run.action.IsPressed();
+
+        UpdateAnimation();
+    }
+
+    private void UpdateAnimation()
+    {
+        if (rb.linearVelocity != Vector3.zero) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.DASH);
+        else if (movementInput != Vector2.zero && isRunning) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.RUN);
+        else if (movementInput != Vector2.zero) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.WALK);
+        else pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.IDLE);
+
+         // TO DO FIX ANIMATION
     }
 
     void FixedUpdate()
     {
-        transform.Translate(new Vector3(movementInput.x * data.movementSpeed, 0, movementInput.y * data.movementSpeed) * Time.deltaTime, Space.World);
+        float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
+        transform.Translate(new Vector3(movementInput.x * bonusSpeed, 0, movementInput.y * bonusSpeed) * Time.deltaTime, Space.World);
     }
 
     void LateUpdate()
@@ -51,16 +69,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(InputAction.CallbackContext context)
     {
-        transform.Translate(new Vector3(movementInput.x * data.dashSpeed, 0, movementInput.y * data.dashSpeed) * Time.deltaTime, Space.World);
+        rb.linearVelocity = Vector3.zero;
+        rb.AddForce(new Vector3(movementInput.x, 0, movementInput.y) * data.dashForce, ForceMode.Impulse);
     }
 
     void OnEnable()
     {
         dash.action.performed += Dash;
+
     }
 
     void OnDisable()
     {
         dash.action.performed -= Dash;
+
     }
 }
