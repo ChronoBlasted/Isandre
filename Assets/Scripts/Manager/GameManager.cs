@@ -16,6 +16,10 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         TimeManager.Instance.Init();
+
+        UIManager.Instance.Init();
+
+        UpdateStateToMenu();
     }
 
     void Update()

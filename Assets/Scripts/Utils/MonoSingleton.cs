@@ -16,9 +16,11 @@ namespace BaseTemplate.Behaviours
                 {
                     if (s_Instance == null)
                     {
+#pragma warning disable CS0618 // Le type ou le membre est obsolète
                         UnityEngine.Object[] instances = FindObjectsOfType(typeof(T));
+#pragma warning restore CS0618 // Le type ou le membre est obsolète
 
-                        if(instances.Length > 1)
+                        if (instances.Length > 1)
                         {
                             Debug.LogWarning("MULTIPLE instances of \"" + typeof(T).Name + "\" in the scene");
                         }
