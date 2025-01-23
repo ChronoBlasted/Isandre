@@ -7,13 +7,17 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] EntityData data;
-    [SerializeField] Transform cameraTarget;
-    [SerializeField] float threshold;
     [SerializeField] LayerMask layerMask;
     [SerializeField] InputActionReference movement, dash, mousePos;
 
+    Camera cam;
     Vector2 movementInput, mousePosition;
     Vector3 positionToLook;
+
+    private void Start()
+    {
+        cam = CameraManager.Instance.currentCamera;
+    }
 
     void Update()
     {
@@ -28,7 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        Camera cam = CameraManager.Instance.currentCamera;
+        RotatePlayer();
+    }
+
+    private void RotatePlayer()
+    {
         Ray ray = cam.ScreenPointToRay(mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
@@ -36,14 +44,6 @@ public class PlayerMovement : MonoBehaviour
             positionToLook = raycastHit.point;
 
             positionToLook.y = transform.position.y;
-
-
-            Vector3 targetPos = positionToLook;
-
-            targetPos.x = Mathf.Clamp(positionToLook.x, -threshold + transform.position.x, threshold + transform.position.x);
-            targetPos.z = Mathf.Clamp(positionToLook.z, -threshold + transform.position.z, threshold + transform.position.z);
-
-            cameraTarget.position = targetPos;
 
             transform.LookAt(positionToLook);
         }
