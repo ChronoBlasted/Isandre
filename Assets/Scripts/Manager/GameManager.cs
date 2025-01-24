@@ -15,11 +15,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Awake()
     {
+        PoolManager.Instance.Init();
+
         TimeManager.Instance.Init();
 
         UIManager.Instance.Init();
 
         CameraManager.Instance.Init();
+
+        AudioManager.Instance.Init();
 
         UpdateStateToMenu();
     }

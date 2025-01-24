@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff87b4b56f7a1bf4b9b6cfb2d52bc984, type: 3}
+  m_Name: NormalBullet
+  m_EditorClassIdentifier: 
+  type: 301
+  name: Bullet
+  sprite: {fileID: 0}
+  prefab: {fileID: 463923398377968615, guid: 1127d28e904b2da409bc6f03af58a049, type: 3}
+  speed: 20

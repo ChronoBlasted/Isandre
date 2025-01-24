@@ -16,4 +16,14 @@ public class PlayerAnimation : MonoBehaviour
         SHOOT_RIGHT,
         PICK_UP,
     }
+
+
+    public string GetCurrentAnimationName()
+    {
+        var animatorinfo = animator.GetCurrentAnimatorClipInfo(0);
+
+        var current_animation = animatorinfo[0].clip.name;
+
+        return current_animation;
+    }
 }

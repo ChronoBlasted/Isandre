@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static PlayerAnimation;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,36 +50,36 @@ public class PlayerMovement : MonoBehaviour
             pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
             pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
         }
-
     }
 
-    void FixedUpdate()
-    {
-        float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
-        transform.Translate(new Vector3(movementInput.x * bonusSpeed, 0, movementInput.y * bonusSpeed) * Time.deltaTime, Space.World);
-    }
 
     void LateUpdate()
     {
+        float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
+        transform.Translate(new Vector3(movementInput.x * bonusSpeed, 0, movementInput.y * bonusSpeed) * Time.deltaTime, Space.World);
+
         RotatePlayer();
     }
 
+
     private void RotatePlayer()
     {
-        Ray ray = cam.ScreenPointToRay(mousePosition);
+        string animName = PlayerManager.Instance.playerAnimation.GetCurrentAnimationName();
 
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
+        Debug.Log(animName);
+
+        if (movementInput != Vector2.zero
+            && (animName == PLAYER_ANIMATION_PARAMETER.WALK.ToString()
+            || animName == PLAYER_ANIMATION_PARAMETER.RUN.ToString()))
         {
-            positionToLook = raycastHit.point;
-
-            positionToLook.y = transform.position.y;
-
-            transform.LookAt(positionToLook);
+            transform.LookAt(new Vector3(transform.position.x + movementInput.x, 0, transform.position.z + movementInput.y));
         }
     }
 
     void Dash(InputAction.CallbackContext context)
     {
+        if (movementInput == Vector2.zero) return;
+
         pManager.playerAnimation.animator.SetTrigger(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.DASH.ToString());
 
         rb.linearVelocity = Vector3.zero;

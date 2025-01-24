@@ -11,10 +11,11 @@ public enum ResourceType
     ______WEAPON______ = 200,
 
     Sword = 201,
+    Pistol = 202,
 
     ______PROJECTILE______ = 300,
 
-    Bullet = 301,
+    NormalBullet = 301,
 
     ______UI______ = 400,
 
@@ -26,13 +27,14 @@ public enum WeaponType
     None = ResourceType.None,
 
     Sword = ResourceType.Sword,
+    Pistol = ResourceType.Pistol,
 }
 
 public enum ProjectileType
 {
     None = ResourceType.None,
 
-    Bullet = ResourceType.Bullet,
+    NormalBullet = ResourceType.NormalBullet,
 }
 
 public enum EntityType
