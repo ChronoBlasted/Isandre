@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 100
   walkSpeed: 4
   runSpeed: 7
-  dashForce: 20
+  dashForce: 25

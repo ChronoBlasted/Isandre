@@ -34,12 +34,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        if (rb.linearVelocity != Vector3.zero) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.DASH);
-        else if (movementInput != Vector2.zero && isRunning) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.RUN);
-        else if (movementInput != Vector2.zero) pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.WALK);
-        else pManager.playerAnimation.PlayAnimation(PlayerAnimation.PLAYER_ANIMATION.IDLE);
+        if (movementInput != Vector2.zero && isRunning)
+        {
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), true);
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
+        }
+        else if (movementInput != Vector2.zero)
+        {
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), true);
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
+        }
+        else
+        {
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
+            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
+        }
 
-         // TO DO FIX ANIMATION
     }
 
     void FixedUpdate()
@@ -69,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(InputAction.CallbackContext context)
     {
+        pManager.playerAnimation.animator.SetTrigger(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.DASH.ToString());
+
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(new Vector3(movementInput.x, 0, movementInput.y) * data.dashForce, ForceMode.Impulse);
     }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    public Animator animator;
 
-    public enum PLAYER_ANIMATION
+    public enum PLAYER_ANIMATION_PARAMETER
     {
         NONE,
         IDLE,
@@ -15,10 +15,5 @@ public class PlayerAnimation : MonoBehaviour
         HOLDING_RIGHT,
         SHOOT_RIGHT,
         PICK_UP,
-    }
-
-    public void PlayAnimation(PLAYER_ANIMATION animationName)
-    {
-        animator.Play(animationName.ToString());
     }
 }
