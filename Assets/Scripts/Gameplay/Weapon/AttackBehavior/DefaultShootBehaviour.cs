@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class DefaultShootBehaviour : ShootBehaviour
+public class DefaultShootBehaviour : DistanceBehaviour
 {
     public override void SetupProjectile(Weapon weapon, Projectile projectile, int i)
     {
@@ -13,9 +13,9 @@ public class DefaultShootBehaviour : ShootBehaviour
 
         var posX =
             (i * (projectile.ProjectileData.size + spacing))
-            - ((weapon.WeaponData.amountBullet / 2f) * (projectile.ProjectileData.size))
+            - ((weapon.WeaponData.amountPerAttack / 2f) * (projectile.ProjectileData.size))
             - ((projectile.ProjectileData.size + spacing) / 2)
-            - (spacing * (weapon.WeaponData.amountBullet / 2f));
+            - (spacing * (weapon.WeaponData.amountPerAttack / 2f));
 
 
         bulletPosition.x += posX;

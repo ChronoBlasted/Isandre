@@ -5,8 +5,9 @@ public class WeaponData : ResourceObject
 {
     public ProjectileType projectileType;
 
-    public float damage;
-    public float firerate; // Balle par seconde
-    public int amountBullet;
-    public float spread = 0f;
+    public float damage = 1;
+    public float attackRate = 1;
+    public int amountPerAttack = 1;
+    public float attackAngle = 0f;
+    public float attackRange = 100f;
 }

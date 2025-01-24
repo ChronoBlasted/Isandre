@@ -10732,7 +10732,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  defaultWeaponType: 202
+  defaultWeaponType: 205
 --- !u!1001 &1879279704
 PrefabInstance:
   m_ObjectHideFlags: 0

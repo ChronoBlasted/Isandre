@@ -1,10 +1,15 @@
 using UnityEngine;
+using static PlayerAnimation;
 
-public class ShootBehaviour : MonoBehaviour
+public abstract class DistanceBehaviour : AttackBehaviour
 {
-    public virtual void Shoot(Weapon weapon)
+    public override void Attack(Weapon weapon)
     {
-        for (int i = 1; i <= weapon.WeaponData.amountBullet; i++)
+        base.Attack(weapon);
+
+        PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.SHOOT_RIGHT.ToString());
+
+        for (int i = 1; i <= weapon.WeaponData.amountPerAttack; i++)
         {
             GameObject bullet = PoolManager.Instance[(ResourceType)weapon.WeaponData.projectileType].Get();
             bullet.layer = (int)Mathf.Log(weapon.projectileLayerToApply.value, 2);
@@ -19,8 +24,10 @@ public class ShootBehaviour : MonoBehaviour
         }
     }
 
+
     public virtual void SetupProjectile(Weapon weapon, Projectile projectile, int i)
     {
 
     }
+
 }

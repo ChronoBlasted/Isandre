@@ -5,25 +5,23 @@ public class Weapon : MonoBehaviour
 {
     public WeaponData WeaponData;
     public Transform firePoint;
-    public ShootBehaviour shootBehaviour;
+    public AttackBehaviour attackBehaviour;
     public LayerMask projectileLayerToApply;
 
-    float timeSinceLastShot = 0f;
+    float timeSinceLastAttack = 0f;
 
     private void Update()
     {
-        timeSinceLastShot += Time.deltaTime;
+        timeSinceLastAttack += Time.deltaTime;
     }
 
     public void Fire()
     {
-        if (timeSinceLastShot >= (1f / WeaponData.firerate))
+        if (timeSinceLastAttack >= (1f / WeaponData.attackRate))
         {
-            PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.SHOOT_RIGHT.ToString());
+            attackBehaviour.Attack(this);
 
-            shootBehaviour.Shoot(this);
-
-            timeSinceLastShot = 0f;
+            timeSinceLastAttack = 0f;
         }
     }
 }

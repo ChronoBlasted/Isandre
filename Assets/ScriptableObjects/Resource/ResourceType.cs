@@ -14,6 +14,7 @@ public enum ResourceType
     Pistol = 202,
     AssaultRifle = 203,
     Shotgun = 204,
+    Kick = 205,
 
     ______PROJECTILE______ = 300,
 
@@ -32,6 +33,7 @@ public enum WeaponType
     Pistol = ResourceType.Pistol,
     AssaultRifle = ResourceType.AssaultRifle,
     Shotgun = ResourceType.Shotgun,
+    Kick = ResourceType.Kick,
 }
 
 public enum ProjectileType
