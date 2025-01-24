@@ -7,9 +7,11 @@ public class SpreadRandomShootBehaviour : ShootBehaviour
         base.SetupProjectile(weapon, projectile, i);
 
         float spreadAngle = weapon.WeaponData.spread;
-        float randomAngle = Random.Range((-spreadAngle / 2f), spreadAngle / 2f);
+        float randomAngle = Random.Range(-spreadAngle / 2f, spreadAngle / 2f);
         Quaternion spreadRotation = Quaternion.AngleAxis(randomAngle, Vector3.up);
 
-        projectile.transform.SetPositionAndRotation(weapon.firePoint.position, spreadRotation);
+        Quaternion finalRotation = weapon.firePoint.rotation * spreadRotation;
+
+        projectile.transform.SetPositionAndRotation(weapon.firePoint.position, finalRotation);
     }
 }

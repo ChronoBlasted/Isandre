@@ -13,9 +13,7 @@ public class Projectile : MonoBehaviour
         trailRenderer.Clear();
 
         transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one, .1f);
-
-        Invoke(nameof(Release), 10f);
+        transform.DOScale(Vector3.one, .1f).SetEase(Ease.OutBack);
     }
 
     private void Update()
@@ -26,18 +24,19 @@ public class Projectile : MonoBehaviour
 
     private void OnDisable()
     {
-        CancelInvoke();
-        StopAllCoroutines();
-        DOTween.Kill(transform);
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Release();
+        if (collision.gameObject.layer == 9)
+        {
+            Release();
+        }
     }
 
     private void Release()
     {
-        PoolManager.Instance[ProjectileData.type].Release(gameObject);
+        if (gameObject.activeSelf) PoolManager.Instance[ProjectileData.type].Release(gameObject);
     }
 }

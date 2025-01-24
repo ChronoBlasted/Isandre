@@ -66,8 +66,6 @@ public class PlayerMovement : MonoBehaviour
     {
         string animName = PlayerManager.Instance.playerAnimation.GetCurrentAnimationName();
 
-        Debug.Log(animName);
-
         if (movementInput != Vector2.zero
             && (animName == PLAYER_ANIMATION_PARAMETER.WALK.ToString()
             || animName == PLAYER_ANIMATION_PARAMETER.RUN.ToString()))

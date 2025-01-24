@@ -14,14 +14,14 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - Bullet
-  - 
-  - 
-  - 
+  - Wall
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 
+  - Player
+  - Enemy
   - 
   - 
   - 

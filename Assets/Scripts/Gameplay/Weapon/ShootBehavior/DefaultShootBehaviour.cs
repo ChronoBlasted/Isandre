@@ -7,11 +7,19 @@ public class DefaultShootBehaviour : ShootBehaviour
     {
         base.SetupProjectile(weapon, projectile, i);
 
-        Vector3 bulletPosition = weapon.firePoint.position;
+        Vector3 bulletPosition = weapon.firePoint.localPosition;
 
-        float spacing = .1f;
-        bulletPosition.x += (i * spacing) - (spacing * (weapon.WeaponData.amountBullet / 2f));
+        float spacing = projectile.ProjectileData.size;
 
-        projectile.transform.SetPositionAndRotation(weapon.firePoint.position, weapon.firePoint.rotation);
+        var posX =
+            (i * (projectile.ProjectileData.size + spacing))
+            - ((weapon.WeaponData.amountBullet / 2f) * (projectile.ProjectileData.size))
+            - ((projectile.ProjectileData.size + spacing) / 2)
+            - (spacing * (weapon.WeaponData.amountBullet / 2f));
+
+
+        bulletPosition.x += posX;
+
+        projectile.transform.SetLocalPositionAndRotation(bulletPosition, Quaternion.identity);
     }
 }

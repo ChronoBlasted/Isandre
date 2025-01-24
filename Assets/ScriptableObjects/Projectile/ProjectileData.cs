@@ -4,4 +4,5 @@ using UnityEngine;
 public class ProjectileData : ResourceObject
 {
     public float speed;
+    public float size;
 }

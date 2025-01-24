@@ -11,7 +11,9 @@ public class ShootBehaviour : MonoBehaviour
 
             Projectile projectile = bullet.GetComponent<Projectile>();
 
+            bullet.transform.SetParent(weapon.firePoint);
             SetupProjectile(weapon, projectile, i);
+            bullet.transform.SetParent(null);
 
             projectile.Init();
         }

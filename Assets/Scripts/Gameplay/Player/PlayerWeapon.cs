@@ -63,9 +63,9 @@ public class PlayerWeapon : MonoBehaviour
             PoolManager.Instance[currentWeapon.WeaponData.type].Release(currentWeapon.gameObject);
         }
 
-        currentWeapon = PoolManager.Instance[ResourceType.Pistol].Get().GetComponent<Weapon>();
+        currentWeapon = PoolManager.Instance[(ResourceType)defaultWeaponType].Get().GetComponent<Weapon>();
 
         currentWeapon.transform.SetParent(weaponHolder);
-        currentWeapon.transform.SetPositionAndRotation(weaponHolder.position, weaponHolder.rotation);
+        currentWeapon.transform.SetLocalPositionAndRotation(Vector3.zero, weaponHolder.rotation);
     }
 }

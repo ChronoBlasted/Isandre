@@ -12,6 +12,8 @@ public enum ResourceType
 
     Sword = 201,
     Pistol = 202,
+    AssaultRifle = 203,
+    Shotgun = 204,
 
     ______PROJECTILE______ = 300,
 
@@ -28,6 +30,8 @@ public enum WeaponType
 
     Sword = ResourceType.Sword,
     Pistol = ResourceType.Pistol,
+    AssaultRifle = ResourceType.AssaultRifle,
+    Shotgun = ResourceType.Shotgun,
 }
 
 public enum ProjectileType
