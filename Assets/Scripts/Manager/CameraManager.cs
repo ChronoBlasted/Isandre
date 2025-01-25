@@ -13,7 +13,7 @@ public class CameraManager : MonoSingleton<CameraManager>
 
     }
 
-    public void ShakeCamera(float intensity = 4, float duration = .125f)
+    public void ShakeCamera(float intensity = 2, float duration = .125f)
     {
         cinemachineShake.ShakeCamera(intensity, duration);
     }

@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
     public WeaponData WeaponData;
     public Transform firePoint;
     public AttackBehaviour attackBehaviour;
+    public ParticleSystem ps;
     public LayerMask layerToAttack;
 
     float timeSinceLastAttack = 0f;
@@ -19,6 +20,10 @@ public class Weapon : MonoBehaviour
         if (timeSinceLastAttack >= (1f / WeaponData.attackRate))
         {
             attackBehaviour.Attack(this);
+
+            if (ps != null) ps.Play();
+
+            CameraManager.Instance.ShakeCamera();
 
             timeSinceLastAttack = 0f;
         }

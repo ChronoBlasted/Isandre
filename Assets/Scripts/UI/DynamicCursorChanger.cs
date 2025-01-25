@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.EventSystems; // Nécessaire pour détecter les événements UI
+using UnityEngine.EventSystems;
 
 public class DynamicCursorChangerWithUI : MonoBehaviour
 {
