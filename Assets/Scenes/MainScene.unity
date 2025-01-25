@@ -6825,6 +6825,55 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.25, y: 0.5, z: 0}
+--- !u!1 &1247978426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247978427}
+  - component: {fileID: 1247978428}
+  m_Layer: 0
+  m_Name: DynamicCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247978427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247978426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1320475678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247978428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247978426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0b93c6f8a66dc418e947c2ec3a03dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: ca9fb8055b14e094bb3a579e7707b2d6, type: 3}
+  hoverCursor: {fileID: 2800000, guid: b88f6586213a9cd4595a24cbd739ee38, type: 3}
+  enemyCursor: {fileID: 2800000, guid: 391f50937b20cf54b91b52c9e4d04f0d, type: 3}
+  buttonCursor: {fileID: 2800000, guid: 398566585a87bd94287eb5d788a543fa, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1 &1269964364
 GameObject:
   m_ObjectHideFlags: 0
@@ -7167,6 +7216,7 @@ Transform:
   - {fileID: 410087041}
   - {fileID: 1500236251}
   - {fileID: 734693803}
+  - {fileID: 1247978427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1330240907
