@@ -1,0 +1,13 @@
+{
+    "type": 205,
+    "name": "Kick",
+    "sprite": {
+        "instanceID": 0
+    },
+    "prefab": {
+        "instanceID": 45508
+    },
+    "damage": 3.0,
+    "attackRate": 1.5,
+    "range": 2.0
+}

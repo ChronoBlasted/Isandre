@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb30071a48f7f42b12df28fdbf9232, type: 3}
+  m_Name: AssaultRiffleData
+  m_EditorClassIdentifier: 
+  type: 203
+  name: Assault Riffle
+  sprite: {fileID: 0}
+  prefab: {fileID: 1633766592178425325, guid: e0efa79b6f81b5741aa9fc65bac548e5, type: 3}
+  damage: 1
+  attackRate: 6
+  projectileType: 301
+  amountProjectilePerFire: 1
+  spread: 0
