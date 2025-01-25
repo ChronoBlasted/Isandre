@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9184c8dee90598545a84d6f4573cfd11, type: 3}
+  m_Script: {fileID: 11500000, guid: 28eb30071a48f7f42b12df28fdbf9232, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
   type: 202
   name: Pistol
   sprite: {fileID: 0}
   prefab: {fileID: 1633766592178425325, guid: 2619297429cf48244b538298493042ea, type: 3}
+  damage: 1
+  attackRate: 3
   projectileType: 301
-  damage: 2
-  firerate: 5
-  amountBullet: 1
+  amountProjectilePerFire: 1
   spread: 0

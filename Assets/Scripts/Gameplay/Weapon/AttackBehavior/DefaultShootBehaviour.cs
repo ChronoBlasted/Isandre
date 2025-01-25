@@ -7,15 +7,17 @@ public class DefaultShootBehaviour : DistanceBehaviour
     {
         base.SetupProjectile(weapon, projectile, i);
 
+        DistanceWeaponData data = (DistanceWeaponData)weapon.WeaponData;
+
         Vector3 bulletPosition = weapon.firePoint.localPosition;
 
         float spacing = projectile.ProjectileData.size;
 
         var posX =
             (i * (projectile.ProjectileData.size + spacing))
-            - ((weapon.WeaponData.amountPerAttack / 2f) * (projectile.ProjectileData.size))
+            - ((data.amountProjectilePerFire / 2f) * (projectile.ProjectileData.size))
             - ((projectile.ProjectileData.size + spacing) / 2)
-            - (spacing * (weapon.WeaponData.amountPerAttack / 2f));
+            - (spacing * (data.amountProjectilePerFire / 2f));
 
 
         bulletPosition.x += posX;

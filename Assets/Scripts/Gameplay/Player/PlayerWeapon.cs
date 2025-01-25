@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     Vector3 positionToLook;
     Vector2 mousePosition;
     Weapon currentWeapon;
+    DistanceWeaponData weaponData;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerWeapon : MonoBehaviour
             RotatePlayer();
         }
 
-        PlayerManager.Instance.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.HOLDING_RIGHT.ToString(), aim.action.IsPressed());
+        if (weaponData != null) PlayerManager.Instance.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.HOLDING_RIGHT.ToString(), aim.action.IsPressed());
     }
 
     private void RotatePlayer()
@@ -64,6 +65,10 @@ public class PlayerWeapon : MonoBehaviour
         }
 
         currentWeapon = PoolManager.Instance[(ResourceType)defaultWeaponType].Get().GetComponent<Weapon>();
+
+        DistanceWeaponData weaponData = currentWeapon.WeaponData as DistanceWeaponData;
+
+        this.weaponData = weaponData != null ? weaponData : null;
 
         currentWeapon.transform.SetParent(weaponHolder);
         currentWeapon.transform.SetLocalPositionAndRotation(Vector3.zero, weaponHolder.rotation);

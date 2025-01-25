@@ -1,12 +1,11 @@
 using UnityEngine;
-using static PlayerAnimation;
 
 public class Weapon : MonoBehaviour
 {
     public WeaponData WeaponData;
     public Transform firePoint;
     public AttackBehaviour attackBehaviour;
-    public LayerMask projectileLayerToApply;
+    public LayerMask layerToAttack;
 
     float timeSinceLastAttack = 0f;
 

@@ -9,16 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9184c8dee90598545a84d6f4573cfd11, type: 3}
+  m_Script: {fileID: 11500000, guid: 239d84313e3fe0349970f8c93c3d2986, type: 3}
   m_Name: Kick
   m_EditorClassIdentifier: 
   type: 205
   name: Kick
   sprite: {fileID: 0}
   prefab: {fileID: 1633766592178425325, guid: 3d19795e78f1f264e927c19b0ae2a8c7, type: 3}
-  projectileType: 0
-  damage: 10
-  attackRate: 1
-  amountPerAttack: 1
-  attackAngle: 0
-  attackRange: 100
+  damage: 3
+  attackRate: 1.5
+  range: 2

@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 359426672}
-  resourceInPool: c8000000ca000000cb000000cc0000002c0100002d010000
+  resourceInPool: c8000000ca000000cb000000cc000000cd000000ce0000002c0100002d010000
   <DefaultPoolSize>k__BackingField: 10
   <MaxPoolSize>k__BackingField: 100
   collectionChecks: 1
@@ -2254,8 +2254,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources:
   - {fileID: 11400000, guid: d91899b0e5ae37e4aa4355c7cd6a403f, type: 2}
-  - {fileID: 11400000, guid: 625e0490447c4c14ea9421c27c3e2393, type: 2}
-  - {fileID: 11400000, guid: 6663bbdb7724e7845a3727911919770e, type: 2}
+  - {fileID: 11400000, guid: d0407f652af69784c881fda3e4e2a4c7, type: 2}
+  - {fileID: 11400000, guid: fdcf868ae9163c147a908b01e3254960, type: 2}
+  - {fileID: 11400000, guid: 7723f73619b34884c8016758ceeb339d, type: 2}
+  - {fileID: 11400000, guid: 6ac43774437b319429b1fbe9fe602965, type: 2}
   - {fileID: 11400000, guid: c1e1b6ef90a7c924e91b284c28322194, type: 2}
 --- !u!1 &410087039
 GameObject:
@@ -10732,7 +10734,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  defaultWeaponType: 205
+  defaultWeaponType: 206
 --- !u!1001 &1879279704
 PrefabInstance:
   m_ObjectHideFlags: 0

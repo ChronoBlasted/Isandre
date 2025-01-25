@@ -14,7 +14,8 @@ public class PlayerAnimation : MonoBehaviour
         DIE,
         HOLDING_RIGHT,
         SHOOT_RIGHT,
-        KICK,
+        KICK_RIGHT,
+        MELEE_RIGHT,
         PICK_UP,
     }
 

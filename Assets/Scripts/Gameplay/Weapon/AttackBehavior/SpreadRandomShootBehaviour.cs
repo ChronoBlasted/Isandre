@@ -6,8 +6,12 @@ public class SpreadRandomShootBehaviour : DistanceBehaviour
     {
         base.SetupProjectile(weapon, projectile, i);
 
-        float spreadAngle = weapon.WeaponData.attackAngle;
+        DistanceWeaponData data = (DistanceWeaponData)weapon.WeaponData;
+
+        float spreadAngle = data.spread;
+
         float randomAngle = Random.Range(-spreadAngle / 2f, spreadAngle / 2f);
+
         Quaternion spreadRotation = Quaternion.AngleAxis(randomAngle, Vector3.up);
 
         Quaternion finalRotation = weapon.firePoint.rotation * spreadRotation;

@@ -7,12 +7,14 @@ public abstract class DistanceBehaviour : AttackBehaviour
     {
         base.Attack(weapon);
 
+        DistanceWeaponData data = (DistanceWeaponData)weapon.WeaponData;
+
         PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.SHOOT_RIGHT.ToString());
 
-        for (int i = 1; i <= weapon.WeaponData.amountPerAttack; i++)
+        for (int i = 1; i <= data.amountProjectilePerFire; i++)
         {
-            GameObject bullet = PoolManager.Instance[(ResourceType)weapon.WeaponData.projectileType].Get();
-            bullet.layer = (int)Mathf.Log(weapon.projectileLayerToApply.value, 2);
+            GameObject bullet = PoolManager.Instance[(ResourceType)data.projectileType].Get();
+            bullet.layer = (int)Mathf.Log(weapon.layerToAttack.value, 2);
 
             Projectile projectile = bullet.GetComponent<Projectile>();
 
