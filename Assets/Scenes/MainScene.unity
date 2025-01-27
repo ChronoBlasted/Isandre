@@ -4368,12 +4368,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 1851879726}
   _effectSource: {fileID: 1711561850}
-  _menuMusic: {fileID: 0}
-  _gameMusic: {fileID: 0}
-  _endMusic: {fileID: 0}
+  _menuMusic: {fileID: 8300000, guid: e248ab57ad1ef8546817bb893a407b23, type: 3}
+  _gameMusic: {fileID: 8300000, guid: 924e7d5f8be13ff4eb904f3c13a83903, type: 3}
+  _endMusic: {fileID: 8300000, guid: 18875c71fa176484dbb794f16b164284, type: 3}
   _effectList:
-  - AudioName: Walk
+  - AudioName: --- UI ---
     AudioClip: []
+  - AudioName: Click
+    AudioClip:
+    - {fileID: 8300000, guid: d2324ba4e1de4dd40937de6054b44b83, type: 3}
+    - {fileID: 8300000, guid: f46a0baf6f149ff49b4709fb32277a7b, type: 3}
+    - {fileID: 8300000, guid: 591f5a85a068fea4e886acc3edd8716f, type: 3}
+    - {fileID: 8300000, guid: 3e4811b2fe3fd1b41bf541f22d6e6079, type: 3}
+    - {fileID: 8300000, guid: a64d6cb9abd3d02459ffb60041763303, type: 3}
+  - AudioName: --- Game ---
+    AudioClip: []
+  - AudioName: Footstep
+    AudioClip:
+    - {fileID: 8300000, guid: f97e47aaaafab624bad6ed43b29fe24f, type: 3}
+    - {fileID: 8300000, guid: c6be419aaea182647a8b94d5b958fa1a, type: 3}
+    - {fileID: 8300000, guid: a68a626e1d495a045909577a306e1761, type: 3}
+    - {fileID: 8300000, guid: 128267b3399fffd43a0ef5f9f584ea77, type: 3}
+    - {fileID: 8300000, guid: f2fbcbb1971411d4f8958eb0161a3ea4, type: 3}
+    - {fileID: 8300000, guid: c2dd1448a43213448a0b5b14a5408d1b, type: 3}
+    - {fileID: 8300000, guid: ade574492ebeea94cb146f350ba0c681, type: 3}
+    - {fileID: 8300000, guid: f0691613c816d774e8d7d7d8b7c883d1, type: 3}
+    - {fileID: 8300000, guid: 87b98abdb9084d746a234d0a25de5e3e, type: 3}
+    - {fileID: 8300000, guid: 16abf2cb4778e3942a53b1cd3324724f, type: 3}
+  - AudioName: CollectCoin
+    AudioClip:
+    - {fileID: 8300000, guid: 40628fce67176b443959a55dbc5f6dcf, type: 3}
+    - {fileID: 8300000, guid: caee8b4129841b54ea7de84fc751e2f6, type: 3}
+  - AudioName: ImpactBulletLight
+    AudioClip:
+    - {fileID: 8300000, guid: 4380e8f808ca92248a88c10207e57395, type: 3}
+    - {fileID: 8300000, guid: 6dd0b8b5ffdb7d8488a8513ff549b233, type: 3}
+    - {fileID: 8300000, guid: c8dc2f6e78fe1cf45878b444f793ea21, type: 3}
+    - {fileID: 8300000, guid: bb5aee689118db340a78be2f016e12e7, type: 3}
+    - {fileID: 8300000, guid: 8e31c362f24416d479b9202135e329ed, type: 3}
+  - AudioName: ImpactBulletMedium
+    AudioClip:
+    - {fileID: 8300000, guid: e2bda9f7ee361f74db373092462718bf, type: 3}
+    - {fileID: 8300000, guid: f0f04ca56a59b054887dc9b352365406, type: 3}
+    - {fileID: 8300000, guid: 5af516ff3e4b01547abfb1613ea3a564, type: 3}
+    - {fileID: 8300000, guid: 41b1718f24d1d2a41869a11278820adc, type: 3}
+    - {fileID: 8300000, guid: fa914705c236dad4ea5c8d49d43f64e3, type: 3}
+  - AudioName: ImpactBulletHeavy
+    AudioClip:
+    - {fileID: 8300000, guid: fe49777ccd0fbbd4ab8b6538eced7450, type: 3}
+    - {fileID: 8300000, guid: aa14909a58c0eb54b8ae59dd212c8af6, type: 3}
+    - {fileID: 8300000, guid: 2307af679561adb45b3e9ce8305fe166, type: 3}
+    - {fileID: 8300000, guid: c176f6ba3ca650f49878ce325dfa5bda, type: 3}
+    - {fileID: 8300000, guid: b128dd55bca0a9b4eac499e422467c25, type: 3}
+  - AudioName: ImpactPunch
+    AudioClip:
+    - {fileID: 8300000, guid: 6f566df88c3cc3548b62f41d0ada44dc, type: 3}
+    - {fileID: 8300000, guid: 8cf6426c7f7da4544ba89293c3a64765, type: 3}
+    - {fileID: 8300000, guid: 0973d16f0ded432498e222ff3f4d59d7, type: 3}
+    - {fileID: 8300000, guid: 3828f75b1baebf84db5f9608fa61d933, type: 3}
+    - {fileID: 8300000, guid: c2cb4c6e9049afb4ab135e8f966891b2, type: 3}
+  - AudioName: ImpactKick
+    AudioClip:
+    - {fileID: 8300000, guid: 5cabb35cef7e2144db42df7c8f259426, type: 3}
+    - {fileID: 8300000, guid: dc5877c44e257ff4981ca1761829a7d9, type: 3}
+    - {fileID: 8300000, guid: 8f76ba30774f5bc44a738ec860331f20, type: 3}
+    - {fileID: 8300000, guid: 36918de589469fa4db2f01d732eea371, type: 3}
+    - {fileID: 8300000, guid: 8c4d4b77abe5a5648b62fecdef4db85a, type: 3}
 --- !u!1 &749020352
 GameObject:
   m_ObjectHideFlags: 0
@@ -10765,7 +10825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1876445566}
   playerAnimation: {fileID: 1876445570}
-  playerWeapon: {fileID: 0}
+  playerWeapon: {fileID: 1876445571}
 --- !u!136 &1876445569
 CapsuleCollider:
   m_ObjectHideFlags: 0
