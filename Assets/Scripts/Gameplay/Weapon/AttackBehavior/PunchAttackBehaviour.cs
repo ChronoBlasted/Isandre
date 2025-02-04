@@ -1,7 +1,7 @@
 using UnityEngine;
 using static PlayerAnimation;
 
-public class MeleeAttackBehaviour : AttackBehaviour
+public class PunchAttackBehaviour : AttackBehaviour
 {
     Weapon weapon;
 

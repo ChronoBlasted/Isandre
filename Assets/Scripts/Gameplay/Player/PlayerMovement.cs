@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerManager pManager;
     Vector2 movementInput, mousePosition;
     Vector3 positionToLook;
+
     bool isRunning;
 
     private void Start()
@@ -55,12 +56,16 @@ public class PlayerMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
-        transform.Translate(new Vector3(movementInput.x * bonusSpeed, 0, movementInput.y * bonusSpeed) * Time.deltaTime, Space.World);
+        Move(movementInput);
 
         RotatePlayer();
     }
 
+    public void Move(Vector2 moveInput)
+    {
+        float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
+        transform.Translate(new Vector3(moveInput.x * bonusSpeed, 0, moveInput.y * bonusSpeed) * Time.deltaTime, Space.World);
+    }
 
     private void RotatePlayer()
     {
