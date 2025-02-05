@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class SpreadRandomShootBehaviour : DistanceBehaviour
+public class SpreadRandomShootBehaviour : DistanceAttackBehaviour
 {
     public override void SetupProjectile(Weapon weapon, Projectile projectile, int i)
     {
         base.SetupProjectile(weapon, projectile, i);
 
-        DistanceWeaponData data = (DistanceWeaponData)weapon.WeaponData;
+        DistanceWeaponData data = (DistanceWeaponData)weapon.weaponData;
 
         float spreadAngle = data.spread;
 

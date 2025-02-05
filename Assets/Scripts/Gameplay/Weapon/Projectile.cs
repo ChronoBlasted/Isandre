@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    public ProjectileData ProjectileData;
+    public ProjectileData projectileData;
 
     [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] ParticleSystem ps;
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += ProjectileData.speed * Time.deltaTime * transform.forward;
+        transform.position += projectileData.speed * Time.deltaTime * transform.forward;
 
     }
 
@@ -46,6 +46,6 @@ public class Projectile : MonoBehaviour
 
     private void Release()
     {
-        PoolManager.Instance[ProjectileData.type].Release(gameObject);
+        PoolManager.Instance[projectileData.type].Release(gameObject);
     }
 }

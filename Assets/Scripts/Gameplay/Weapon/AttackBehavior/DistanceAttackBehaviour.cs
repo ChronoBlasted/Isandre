@@ -1,13 +1,13 @@
 using UnityEngine;
 using static PlayerAnimation;
 
-public abstract class DistanceBehaviour : AttackBehaviour
+public abstract class DistanceAttackBehaviour : AttackBehaviour
 {
     public override void Attack(Weapon weapon)
     {
         base.Attack(weapon);
 
-        DistanceWeaponData data = (DistanceWeaponData)weapon.WeaponData;
+        DistanceWeaponData data = (DistanceWeaponData)weapon.weaponData;
 
         PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.SHOOT_RIGHT.ToString());
 

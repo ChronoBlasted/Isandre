@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public WeaponData WeaponData;
+    public WeaponData weaponData;
     public Transform firePoint;
-    public AttackBehaviour attackBehaviour;
+    public DistanceAttackBehaviour attackBehaviour;
     public ParticleSystem ps;
     public LayerMask layerToAttack;
 
@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        if (timeSinceLastAttack >= (1f / WeaponData.attackRate))
+        if (timeSinceLastAttack >= (1f / weaponData.attackRate))
         {
             attackBehaviour.Attack(this);
 

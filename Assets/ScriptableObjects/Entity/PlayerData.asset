@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61152d2fa5001e042b76d86028bc23b4, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  type: 101
+  name: Player
+  sprite: {fileID: 0}
+  prefab: {fileID: 3803506333954015112, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
   health: 100
   walkSpeed: 4
   runSpeed: 7

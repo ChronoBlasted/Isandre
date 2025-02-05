@@ -9,7 +9,7 @@ public class PunchAttackBehaviour : AttackBehaviour
     {
         weapon = _weapon;
 
-        MeleeWeaponData data = (MeleeWeaponData)weapon.WeaponData;
+        MeleeWeaponData data = (MeleeWeaponData)weapon.weaponData;
 
         PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.MELEE_RIGHT.ToString());
 
@@ -25,7 +25,7 @@ public class PunchAttackBehaviour : AttackBehaviour
 
     private void OnDrawGizmos()
     {
-        MeleeWeaponData data = (MeleeWeaponData)weapon.WeaponData;
+        MeleeWeaponData data = (MeleeWeaponData)weapon.weaponData;
 
         Gizmos.DrawWireSphere(transform.position + transform.forward, data.range);
     }

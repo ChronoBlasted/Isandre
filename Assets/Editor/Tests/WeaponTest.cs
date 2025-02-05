@@ -13,7 +13,7 @@ public class WeaponTest : MonoBehaviour
     {
         Weapon weapon = CreateWeapon();
 
-        weapon.WeaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Shotgun);
+        weapon.weaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Shotgun);
         weapon.attackBehaviour = new SpreadRandomShootBehaviour();
     }
 
@@ -22,8 +22,7 @@ public class WeaponTest : MonoBehaviour
     {
         Weapon weapon = CreateWeapon();
 
-        weapon.WeaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Kick);
-        weapon.attackBehaviour = new KickAttackBehaviour();
+        weapon.weaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Kick);
     }
 
     [Test]
@@ -31,8 +30,7 @@ public class WeaponTest : MonoBehaviour
     {
         Weapon weapon = CreateWeapon();
 
-        weapon.WeaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Punch);
-        weapon.attackBehaviour = new PunchAttackBehaviour();
+        weapon.weaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Punch);
     }
 
     [Test]
@@ -40,7 +38,7 @@ public class WeaponTest : MonoBehaviour
     {
         Weapon weapon = CreateWeapon();
 
-        weapon.WeaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.AssaultRifle);
+        weapon.weaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.AssaultRifle);
         weapon.attackBehaviour = new DefaultShootBehaviour();
     }
 
@@ -49,7 +47,7 @@ public class WeaponTest : MonoBehaviour
     {
         Weapon weapon = CreateWeapon();
 
-        weapon.WeaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Pistol);
+        weapon.weaponData = (WeaponData)ResourceObjectHolder.Instance.GetResourceByType(ResourceType.Pistol);
         weapon.attackBehaviour = new DefaultShootBehaviour();
     }
 }
