@@ -25,7 +25,7 @@ public class PlayerWeapon : MonoBehaviour
 
         if (shoot.action.IsPressed())
         {
-            RotatePlayer();
+            Aim();
 
             currentWeapon.Fire();
         }
@@ -33,13 +33,13 @@ public class PlayerWeapon : MonoBehaviour
 
         if (aim.action.IsPressed())
         {
-            RotatePlayer();
+            Aim();
         }
 
         if (weaponData != null) PlayerManager.Instance.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.HOLDING_RIGHT.ToString(), aim.action.IsPressed());
     }
 
-    private void RotatePlayer()
+    private void Aim()
     {
         Ray ray = CameraManager.Instance.currentCamera.ScreenPointToRay(mousePosition);
 
@@ -61,12 +61,12 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-            PoolManager.Instance[currentWeapon.WeaponData.type].Release(currentWeapon.gameObject);
+            PoolManager.Instance[currentWeapon.weaponData.type].Release(currentWeapon.gameObject);
         }
 
         currentWeapon = PoolManager.Instance[(ResourceType)defaultWeaponType].Get().GetComponent<Weapon>();
 
-        DistanceWeaponData weaponData = currentWeapon.WeaponData as DistanceWeaponData;
+        DistanceWeaponData weaponData = currentWeapon.weaponData as DistanceWeaponData;
 
         this.weaponData = weaponData != null ? weaponData : null;
 

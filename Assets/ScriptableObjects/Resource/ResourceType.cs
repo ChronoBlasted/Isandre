@@ -10,7 +10,6 @@ public enum ResourceType
 
     ______WEAPON______ = 200,
 
-    Sword = 201,
     Pistol = 202,
     AssaultRifle = 203,
     Shotgun = 204,
@@ -30,7 +29,6 @@ public enum WeaponType
 {
     None = ResourceType.None,
 
-    Sword = ResourceType.Sword,
     Pistol = ResourceType.Pistol,
     AssaultRifle = ResourceType.AssaultRifle,
     Shotgun = ResourceType.Shotgun,

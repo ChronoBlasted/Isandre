@@ -19,5 +19,5 @@ MonoBehaviour:
   damage: 1
   attackRate: 6
   projectileType: 301
-  amountProjectilePerFire: 1
+  amountProjectilePerFire: 2
   spread: 0

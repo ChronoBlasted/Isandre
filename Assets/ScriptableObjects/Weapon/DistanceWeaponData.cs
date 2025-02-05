@@ -1,7 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewMeleeWeaponData", menuName = "ScriptableObjects/NewMeleeWeaponData", order = 1)]
-public class MeleeWeaponData : WeaponData
+[CreateAssetMenu(fileName = "NewWeaponDistanceData", menuName = "ScriptableObjects/NewWeaponDistanceData", order = 1)]
+public class DistanceWeaponData : WeaponData
 {
-    public float range = 2f;
+    public ProjectileType projectileType;
+    public int amountProjectilePerFire = 1;
+    public float spread = 0f;
 }
