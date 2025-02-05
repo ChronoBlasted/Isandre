@@ -1,0 +1,53 @@
+name: Unity CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Test Unity Game
+    runs-on: ubuntu-latest  # Utilisation d'un serveur Linux pour exécuter Unity Headless
+
+    steps:
+      - name: Checkout Repository # récupérer le repository
+        uses: actions/checkout@v3
+
+      - name: Cache Unity Library 
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ hashFiles('Packages/manifest.json') }}
+          restore-keys: |
+            Library-${{ runner.os }}-
+
+      - name: Install Unity # installe unity sur le serveur
+        uses: game-ci/unity-builder@v2
+        with:
+          unityVersion: 6000.0.23f  # Change avec ta version Unity
+          targetPlatform: StandaloneWindows64  # Windows, WebGL, Android, etc.
+
+      - name: Run Unit Tests # lance les tests unitaires
+        uses: game-ci/unity-test-runner@v2
+        with:
+          unityVersion: 6000.0.23f # Change avec ta version Unity
+
+      - name: Build Game # build le projet
+        uses: game-ci/unity-builder@v2
+        with:
+          unityVersion: 6000.0.23f # Change avec ta version Unity
+          targetPlatform: StandaloneWindows64
+
+      - name: Get Unity Project Version # get unity version on project settings
+        id: get_version
+        run: echo "UNITY_VERSION=$(grep 'bundleVersion:' ProjectSettings/ProjectSettings.asset | awk '{print $2}')" >> $GITHUB_ENV
+
+      - name: Upload Build Artifact # upload le build dans sur github>artefact
+        uses: actions/upload-artifact@v3
+        with:
+            name: Unity-Build-${{ env.UNITY_VERSION }}
+            path: build/StandaloneWindows64
