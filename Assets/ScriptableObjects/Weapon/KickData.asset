@@ -18,4 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 1633766592178425325, guid: 3d19795e78f1f264e927c19b0ae2a8c7, type: 3}
   damage: 3
   attackRate: 1.5
+  audioClipName: AttackKick
   range: 2

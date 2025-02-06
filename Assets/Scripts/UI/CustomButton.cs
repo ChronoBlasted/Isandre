@@ -15,13 +15,11 @@ namespace Chrono.UI
 
         [SerializeField] float _timeOfScale = .2f;
 
-
-
         public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
 
-            //AudioManager.Instance.PlaySound("Button");
+            AudioManager.Instance.PlaySound("ClickButton");
 
             switch (_type)
             {

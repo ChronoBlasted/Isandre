@@ -40,6 +40,8 @@ public class Projectile : MonoBehaviour
             ps.transform.SetParent(null);
             ps.Play();
 
+            AudioManager.Instance.PlaySound(projectileData.hitAudioName);
+
             Release();
         }
     }

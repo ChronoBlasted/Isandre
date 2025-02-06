@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
             attackBehaviour.Attack(this);
 
             if (ps != null) ps.Play();
+            AudioManager.Instance.PlaySound(weaponData.audioClipName);
 
             CameraManager.Instance.ShakeCamera();
 

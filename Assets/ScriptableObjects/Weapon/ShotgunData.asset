@@ -18,6 +18,7 @@ MonoBehaviour:
   prefab: {fileID: 1633766592178425325, guid: c5cce76227ef6be4da2eb11825d5f001, type: 3}
   damage: 1
   attackRate: 4
+  audioClipName: AttackHeavy
   projectileType: 301
   amountProjectilePerFire: 5
   spread: 35

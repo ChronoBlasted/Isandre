@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Bullet
   sprite: {fileID: 0}
   prefab: {fileID: 463923398377968615, guid: 1127d28e904b2da409bc6f03af58a049, type: 3}
+  hitAudioName: BulletHit
   speed: 20
   size: 0.2
