@@ -4,7 +4,7 @@ public class Weapon : MonoBehaviour
 {
     public WeaponData weaponData;
     public Transform firePoint;
-    public DistanceAttackBehaviour attackBehaviour;
+    public AttackBehaviour attackBehaviour;
     public ParticleSystem ps;
     public LayerMask layerToAttack;
 

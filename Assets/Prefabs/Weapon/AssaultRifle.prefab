@@ -96,6 +96,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d0407f652af69784c881fda3e4e2a4c7, type: 2}
     - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: d0407f652af69784c881fda3e4e2a4c7, type: 2}
+    - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: shootBehaviour
       value: 
       objectReference: {fileID: 8661474012638296191}
@@ -103,6 +107,10 @@ PrefabInstance:
       propertyPath: attackBehaviour
       value: 
       objectReference: {fileID: 8661474012638296191}
+    - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
+      propertyPath: layerToAttack.m_Bits
+      value: 65536
+      objectReference: {fileID: 0}
     - target: {fileID: 8597778967752717120, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
