@@ -20,8 +20,8 @@ public class EnemyDistance : Enemy
 
         foreach (var v in spawnerList)
             v.SpawnObject(enemyData.Projectile);
-
     }
+
 }
 
 

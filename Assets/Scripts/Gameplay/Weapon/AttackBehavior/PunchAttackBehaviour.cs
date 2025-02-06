@@ -21,6 +21,7 @@ public class PunchAttackBehaviour : AttackBehaviour
         }
 
         base.Attack(weapon);
+
     }
 
     private void OnDrawGizmos()

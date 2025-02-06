@@ -5,7 +5,7 @@ public class EnemyMoveState : State<Enemy>
     public override void Enter()
     {
         if ((_owner.target.position - _owner.transform.position).magnitude > _owner.enemyData.enemyRange)
-            _owner.animator.SetTrigger("Walk");
+            _owner.AnimationChange("Walk");
         else
             _owner.ChangeStateToAttack();
 
@@ -22,7 +22,12 @@ public class EnemyMoveState : State<Enemy>
 
     public override void Update()
     {
+        //PoolManager.Instance[ResourceType.Player].Get();
         
+        //PoolManager.Instance[ResourceType.None].Release(gameObject);
+
+
+
         if ((_owner.target.position - _owner.transform.position).magnitude <= _owner.enemyData.enemyRange)
         {
             _owner.ChangeStateToAttack();
@@ -30,7 +35,7 @@ public class EnemyMoveState : State<Enemy>
         }
 
         Vector3 dir = (_owner.target.position - _owner.transform.position).normalized;
-        _owner.transform.position += dir * _owner.enemyData.enemyRange * Time.deltaTime;
+        _owner.transform.position += dir * _owner.enemyData.ennemyspeed * Time.deltaTime;
 
     }
 

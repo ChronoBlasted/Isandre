@@ -23,6 +23,16 @@ public enum ResourceType
     ______UI______ = 400,
 
     FloatingText = 401,
+
+    ______ENEMIES______ = 500,
+
+    MeleeEnemy = 501,
+    RangeEnemy = 502,
+    KamikazeEnemy = 503,
+
+    ______Collectable______ = 600,
+    Experience = 601,
+    Life = 602,
 }
 
 public enum WeaponType
@@ -46,4 +56,16 @@ public enum ProjectileType
 public enum EntityType
 {
     Player = ResourceType.Player,
+}
+public enum EnemyType
+{
+    MeleeEnemy = ResourceType.MeleeEnemy,
+    RangeEnemy = ResourceType.RangeEnemy,
+    KamikazeEnemy = ResourceType.KamikazeEnemy
+}
+
+public enum CollectableType
+{
+    XP  = ResourceType.Experience,
+    Life = ResourceType.Life
 }

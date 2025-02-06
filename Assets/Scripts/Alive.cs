@@ -8,11 +8,22 @@ public class Alive : MonoBehaviour
     public int maxLife;
     public UnityEvent dieEvent;
     public UnityEvent hitEvent;
-    public bool Add, Subtract;
-    public void Init(int data)
+    public bool Add, Subtract, data;
+
+    public void InitWithData(int data)
     {
         maxLife = data;
         currentLife = maxLife;
+    }
+    public void InitWithoutData()
+    {
+        currentLife = maxLife;
+    }
+
+    private void Start()
+    {
+        if (!data) 
+        InitWithoutData();
     }
 
     public void Update()

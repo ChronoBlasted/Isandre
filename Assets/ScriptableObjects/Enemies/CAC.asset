@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CAC
   m_EditorClassIdentifier: 
   enemyName: CAC
-  enemyRange: 2
+  enemyRange: 0.5
   enemyLife: 20
   ennemyspeed: 2
   AttackTime: 1
