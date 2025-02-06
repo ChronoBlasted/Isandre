@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Component")]
     public Alive hpScript;
-    public Animator animator;
+    public Animator animator, animatorVisual ;
     public CollectableSpawner Spawner;
 
     [Header("Data")]
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         if (TryGetComponent<Alive>(out Alive _hpScript))
         {
             hpScript = _hpScript;
-            hpScript.Init(enemyData.enemyLife);
+            hpScript.InitWithData(enemyData.enemyLife);
             //hpScript.dieEvent.AddListener(Die);
             //hpScript.hitEvent.AddListener(Hitted);
         }
@@ -74,7 +74,13 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Die()
     {
+
+        //GameObject Exp = PoolManager.Instance[ResourceType.Player].Get();
+        //Exp.transform = null;
+
         Destroy(gameObject);
+
+
     }
 
     #region StateMachine
@@ -98,6 +104,7 @@ public class Enemy : MonoBehaviour
     public void AnimationChange(string _animTrigger)
     {
         animator.SetTrigger(_animTrigger);
+        animatorVisual.SetTrigger(_animTrigger);
     }
     #endregion
 

@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Ennemy_Projectile : MonoBehaviour
 {
     public int speed;
     public int damage;
+    public bool OnlyOneHit;
 
     // Update is called once per frame
     void Update()
@@ -15,9 +16,11 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Alive _alive))
         {
-            Debug.Log("Hit => " + collision.gameObject.name);
             _alive.ChangeLife(-damage);
+        
+            if(OnlyOneHit)
+            Destroy(gameObject); //à retourner dans la POOL
         }
-        Destroy(gameObject); //à retourner dans la POOL
+
     }
 }

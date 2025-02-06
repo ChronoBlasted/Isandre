@@ -21,6 +21,7 @@ public class MeleeAttackBehaviour : AttackBehaviour
         }
 
         base.Attack(weapon);
+
     }
 
     private void OnDrawGizmos()

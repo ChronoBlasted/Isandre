@@ -4,7 +4,7 @@ using UnityEngine;
 public class ScriptableEnnemy : ScriptableObject
 {
     public string enemyName;
-    public int enemyRange;
+    public float enemyRange;
     public int enemyLife;
     public int ennemyspeed;
     public int AttackTime;
