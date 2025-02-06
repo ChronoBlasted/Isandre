@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Data")]
     public ScriptableEnnemy enemyData;
-    public Transform target; //Change with player Class
+    public Transform target;
     protected bool inAction;
 
     #region Nouvelle Machine à états    
@@ -61,7 +61,9 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
-        _stateMachine.SetState<EnemyMoveState>();        
+        target = PlayerManager.Instance.transform;
+
+        _stateMachine.SetState<EnemyMoveState>();
     }
 
     private void OnDestroy()

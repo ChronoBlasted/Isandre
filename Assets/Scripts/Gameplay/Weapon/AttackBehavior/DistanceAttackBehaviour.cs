@@ -22,7 +22,7 @@ public abstract class DistanceAttackBehaviour : AttackBehaviour
             SetupProjectile(weapon, projectile, i);
             bullet.transform.SetParent(null);
 
-            projectile.Init();
+            projectile.Init(weapon.weaponData.damage);
         }
     }
 

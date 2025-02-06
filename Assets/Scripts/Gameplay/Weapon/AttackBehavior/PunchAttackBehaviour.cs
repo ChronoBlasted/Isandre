@@ -17,7 +17,10 @@ public class PunchAttackBehaviour : AttackBehaviour
 
         foreach (Collider collider in hitEnemies)
         {
-            Debug.Log("Hit attack layers");
+            if (collider.gameObject.TryGetComponent(out Alive _alive))
+            {
+                _alive.ChangeLife(-weapon.weaponData.damage);
+            }
         }
 
         base.Attack(weapon);

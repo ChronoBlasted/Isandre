@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5845052050181741557}
-  m_Layer: 0
-  m_Name: Graphique
+  m_Layer: 16
+  m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 448646842097688198}
   - component: {fileID: 2038950446518765327}
   m_Layer: 0
-  m_Name: Ennemies
+  m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,13 +4,14 @@ using System.Collections;
 using Unity.Collections;
 using System.Collections.Generic;
 
-public class EnemyDistance : Enemy
+public class EnemyRange : Enemy
 {
     public List<Spawner> spawnerList;
 
     public override void Awake()
     {
         base.Awake();
+
         inAction = false;
     }
 

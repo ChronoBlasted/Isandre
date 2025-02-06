@@ -22,8 +22,8 @@ public class Alive : MonoBehaviour
 
     private void Start()
     {
-        if (!data) 
-        InitWithoutData();
+        if (!data)
+            InitWithoutData();
     }
 
     public void Update()
@@ -33,13 +33,17 @@ public class Alive : MonoBehaviour
             AddLife();
             Add = false;
         }
-        if(Subtract)
+        if (Subtract)
         {
             SubtractLife();
             Subtract = false;
         }
     }
-    
+    public void PlayerDie()
+    {
+        GameManager.Instance.ReloadScene();
+    }
+
 
 
 
@@ -47,9 +51,10 @@ public class Alive : MonoBehaviour
     {
         currentLife += _i;
 
-        if (currentLife > maxLife) { 
+        if (currentLife > maxLife)
+        {
             currentLife = maxLife;
-            return; 
+            return;
         }
 
         if (currentLife <= 0)
@@ -57,16 +62,17 @@ public class Alive : MonoBehaviour
             dieEvent.Invoke();
             return;
         }
-    }    
+    }
     public int GetLife()
     {
         return currentLife;
     }
 
-    [ContextMenu("AddLife")] public void AddLife()
+    [ContextMenu("AddLife")]
+    public void AddLife()
     {
         currentLife += 1;
-        
+
         if (currentLife > maxLife)
         {
             currentLife = maxLife;
@@ -74,15 +80,16 @@ public class Alive : MonoBehaviour
         }
 
     }
-    [ContextMenu("SubtractLife")] public void SubtractLife()
+    [ContextMenu("SubtractLife")]
+    public void SubtractLife()
     {
         currentLife += -1;
-        
+
 
         if (currentLife <= 0)
         {
             currentLife = 0;
-            
+
             dieEvent.Invoke();
             return;
         }

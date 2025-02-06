@@ -3,11 +3,12 @@ using System;
 using System.Collections;
 using Unity.Collections;
 
-public class CAC : Enemy
+public class EnemyMelee : Enemy
 {
     public override void Awake()
     {
         base.Awake();
+
         inAction = false;
     }
 
