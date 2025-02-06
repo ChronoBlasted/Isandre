@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a749089a71b4344a614dce71a83f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileData: {fileID: 0}
+  projectileData: {fileID: 11400000, guid: c1e1b6ef90a7c924e91b284c28322194, type: 2}
   trailRenderer: {fileID: 3138238604434503724}
   ps: {fileID: 0}
 --- !u!1 &4839620247116210478

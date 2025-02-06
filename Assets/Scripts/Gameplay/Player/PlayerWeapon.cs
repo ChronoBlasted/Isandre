@@ -4,6 +4,8 @@ using static PlayerAnimation;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    public PlayerInput PInput;
+
     [SerializeField] Transform weaponHolder;
     [SerializeField] InputActionReference shoot, aim, mousePos;
     [SerializeField] LayerMask layerMask;
@@ -23,7 +25,16 @@ public class PlayerWeapon : MonoBehaviour
     {
         mousePosition = mousePos.action.ReadValue<Vector2>();
 
-        if (shoot.action.IsPressed())
+        bool usingControllerForInput = PInput.currentControlScheme == "Controller";
+        if (usingControllerForInput && mousePosition != Vector2.zero)
+        {
+            mousePosition += new Vector2(Screen.width / 2f, Screen.height / 2f);
+
+            Aim();
+
+            currentWeapon.Fire();
+        }
+        else if (shoot.action.IsPressed())
         {
             Aim();
 

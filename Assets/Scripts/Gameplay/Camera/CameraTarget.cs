@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class CameraTarget : MonoBehaviour
 {
@@ -17,10 +18,12 @@ public class CameraTarget : MonoBehaviour
         player = PlayerManager.Instance.transform;
     }
 
-
     private void LateUpdate()
     {
         mousePosition = mousePos.action.ReadValue<Vector2>();
+
+        bool usingControllerForInput = PlayerManager.Instance.playerWeapon.PInput.currentControlScheme == "Controller";
+        if (usingControllerForInput) mousePosition += new Vector2(Screen.width / 2f, Screen.height / 2f);
 
         Vector3 targetPos = cam.ScreenToViewportPoint(mousePosition);
 

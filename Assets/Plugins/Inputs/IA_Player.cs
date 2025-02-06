@@ -207,9 +207,9 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""ac6c3253-2d72-4fa9-9201-6b25dc275144"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2,ScaleVector2(x=500,y=500)"",
                     ""groups"": """",
                     ""action"": ""MouseCursor"",
                     ""isComposite"": true,
@@ -240,7 +240,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Left"",
                     ""id"": ""c5e207b4-bba7-464a-aa2f-5c6e5fd0d45a"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Controller"",
@@ -251,7 +251,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Right"",
                     ""id"": ""f940b856-2e4d-4d53-a2e9-7dbb432e67f6"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Controller"",
@@ -327,22 +327,22 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e7700015-ccc9-49b6-a590-fe75f7f20d66"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""d8cd72e3-07f8-447f-9d20-628cb7468ae9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""Shoot"",
+                    ""groups"": """",
+                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""814a5825-8437-40c3-a18a-4d810c939502"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""id"": ""e7700015-ccc9-49b6-a590-fe75f7f20d66"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Controller"",
+                    ""groups"": "";Keyboard"",
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -357,17 +357,6 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cc09d815-c335-4728-a5f9-e1acd1fa7c99"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Controller"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -376,7 +365,18 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
         {
             ""name"": ""Keyboard"",
             ""bindingGroup"": ""Keyboard"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""Controller"",

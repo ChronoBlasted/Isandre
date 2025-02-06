@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class DynamicCursorChangerWithUI : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class DynamicCursorChangerWithUI : MonoBehaviour
         }
 
         Cursor.SetCursor(defaultCursor, cursorHotspot, CursorMode.Auto);
+    }
+
+    public void ShowHideCursor(PlayerInput pInput)
+    {
+        bool usingControllerForInput = pInput.currentControlScheme == "Controller";
+        Cursor.visible = !usingControllerForInput;
     }
 
     private bool IsPointerOverUIElement()
