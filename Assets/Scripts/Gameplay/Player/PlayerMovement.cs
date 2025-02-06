@@ -8,6 +8,7 @@ using static PlayerAnimation;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] EntityData data;
+    [SerializeField] string footstepAudioName = "Footstep";
     [SerializeField] LayerMask layerMask;
     [SerializeField] Rigidbody rb;
     [SerializeField] InputActionReference movement, dash, run, mousePos;
@@ -34,22 +35,33 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimation();
     }
 
+    public void PlayFootStep()
+    {
+        AudioManager.Instance.PlaySound(footstepAudioName);
+    }
+
+    public void PlayRunStep()
+    {
+        AudioManager.Instance.PlaySound(footstepAudioName);
+    }
+
+
     private void UpdateAnimation()
     {
         if (movementInput != Vector2.zero && isRunning)
         {
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), true);
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.RUN.ToString(), true);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
         }
         else if (movementInput != Vector2.zero)
         {
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), true);
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.WALK.ToString(), true);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
         }
         else
         {
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
-            pManager.playerAnimation.animator.SetBool(PlayerAnimation.PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.WALK.ToString(), false);
+            pManager.playerAnimation.animator.SetBool(PLAYER_ANIMATION_PARAMETER.RUN.ToString(), false);
         }
     }
 
@@ -64,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector2 moveInput)
     {
         float bonusSpeed = isRunning ? data.runSpeed : data.walkSpeed;
-        transform.Translate(new Vector3(moveInput.x * bonusSpeed, 0, moveInput.y * bonusSpeed) * Time.deltaTime, Space.World);
+        pManager.transform.Translate(new Vector3(moveInput.x * bonusSpeed, 0, moveInput.y * bonusSpeed) * Time.deltaTime, Space.World);
     }
 
     private void RotatePlayer()
@@ -75,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             && (animName == PLAYER_ANIMATION_PARAMETER.WALK.ToString()
             || animName == PLAYER_ANIMATION_PARAMETER.RUN.ToString()))
         {
-            transform.LookAt(new Vector3(transform.position.x + movementInput.x, 0, transform.position.z + movementInput.y));
+            pManager.transform.LookAt(new Vector3(pManager.transform.position.x + movementInput.x, 0, pManager.transform.position.z + movementInput.y));
         }
     }
 
