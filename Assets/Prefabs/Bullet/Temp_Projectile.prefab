@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4678590484829038851}
   - component: {fileID: 2549460583189421696}
   - component: {fileID: 7024500245368414017}
-  - component: {fileID: 5568170239403525139}
   - component: {fileID: 884611019524793592}
   - component: {fileID: 993902604193633834}
+  - component: {fileID: 2936026346149657883}
   m_Layer: 11
   m_Name: Temp_Projectile
   m_TagString: Untagged
@@ -89,21 +89,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3327562380243906994}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5568170239403525139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327562380243906994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55db491e700fdb4f9fab25446e0cf35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  damage: 5
-  OnlyOneHit: 1
 --- !u!135 &884611019524793592
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -152,3 +137,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2936026346149657883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327562380243906994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a749089a71b4344a614dce71a83f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileData: {fileID: 11400000, guid: 8efb83f0649e66842a71a591cf1a3593, type: 2}
+  trailRenderer: {fileID: 0}
+  ps: {fileID: 0}
