@@ -95,7 +95,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: f82eb419eac63814ba219d2cd47540f8, type: 2}
     - target: {fileID: 5845052050181741557, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5845052050181741557, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -232,10 +232,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.4
+  m_Height: 0.4
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!95 &2858052951129982570
 Animator:
   serializedVersion: 7

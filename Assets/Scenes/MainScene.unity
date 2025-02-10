@@ -2096,6 +2096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7072607323970938381, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7707444284092642695, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4820371
@@ -2858,9 +2862,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3108990278415507541, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7072607323970938381, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
       propertyPath: m_Name
       value: RangeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072607323970938381, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707444284092642695, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5115,13 +5127,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3231685537917703761, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231685537917703761, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7072607323970938381, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
       propertyPath: m_Name
       value: MeleeEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7072607323970938381, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7707444284092642695, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3570738
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 7707444284092642695, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11363,6 +11387,10 @@ PrefabInstance:
     - target: {fileID: 7072607323970938381, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
       propertyPath: m_Name
       value: MeleeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072607323970938381, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7707444284092642695, guid: 148b6ac0a3ef9dc4f8c20f85752b8d48, type: 3}
       propertyPath: m_LocalPosition.x
