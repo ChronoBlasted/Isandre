@@ -83,7 +83,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448646842097688198, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Enemy, Assembly-CSharp
+      value: Enemy, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 448646842097688198, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -109,17 +109,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6145274309773640023, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6744355065312416477, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.4820371
       objectReference: {fileID: 0}
     - target: {fileID: 6744355065312416477, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0.0050001144
       objectReference: {fileID: 0}
     - target: {fileID: 6744355065312416477, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9.193586
       objectReference: {fileID: 0}
     - target: {fileID: 6744355065312416477, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -209,6 +213,7 @@ MonoBehaviour:
   animator: {fileID: 2858052951129982570}
   animatorVisual: {fileID: 4879955882667858894}
   Spawner: {fileID: 0}
+  EXP: {fileID: 8205020302160941743, guid: bd0a861fd5d831a43b90521574736d76, type: 3}
   enemyData: {fileID: 11400000, guid: 83c05f5e9799236429c20a1e60e05ba7, type: 2}
   target: {fileID: 0}
   spawnerList:

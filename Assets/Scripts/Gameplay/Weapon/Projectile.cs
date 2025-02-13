@@ -14,6 +14,9 @@ public class Projectile : MonoBehaviour
     public void Init(int damage)
     {
         this.damage = damage;
+        
+        if (damage == 0)
+            damage = projectileData.damage;
 
         trailRenderer.Clear();
 

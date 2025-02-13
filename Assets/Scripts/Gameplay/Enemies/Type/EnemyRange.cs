@@ -23,6 +23,8 @@ public class EnemyRange : Enemy
             v.SpawnObject(enemyData.Projectile);
     }
 
+
+
 }
 
 

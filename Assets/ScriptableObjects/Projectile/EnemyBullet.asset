@@ -19,3 +19,4 @@ MonoBehaviour:
   hitAudioName: BulletHit
   speed: 5
   size: 0.2
+  damage: 10
