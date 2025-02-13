@@ -11,7 +11,11 @@ public class CollectableHeal : Collectable
     {
         if (other.gameObject.layer == 15 && other.gameObject.TryGetComponent<Alive>(out Alive alive))
         {
-            alive.ChangeLife(10);
+            if (alive.currentLife < alive.maxLife)
+            {
+                alive.ChangeLife(10);
+                gameObject.SetActive(false);
+            }
         }
     }
 

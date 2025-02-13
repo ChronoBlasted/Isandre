@@ -1,10 +1,10 @@
+
 using UnityEngine;
-using System;
-using System.Collections;
-using Unity.Collections;
 
 public class EnemyMelee : Enemy
 {
+    public float attackRadius = 1;
+    public int damage;
     public override void Awake()
     {
         base.Awake();
@@ -13,10 +13,17 @@ public class EnemyMelee : Enemy
     }
 
     #region Actions
-    //protected override void Attack()
-    //{
-    //    base.Attack();
-    //}    
+    public override void Attack()
+    {
+        base.Attack();
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position , attackRadius, LayerMask.GetMask("Player"));
+        foreach (var hitCollider in hitColliders)
+        {
+            print(hitCollider.gameObject.name);
+            hitCollider.GetComponent<Alive>().ChangeLife(-damage);
+        }
+    }    
     //protected override void Die()
     //{
     //    base.Die();
