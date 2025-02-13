@@ -14,7 +14,7 @@ public abstract class DistanceAttackBehaviour : AttackBehaviour
         for (int i = 1; i <= data.amountProjectilePerFire; i++)
         {
             GameObject bullet = PoolManager.Instance[(ResourceType)data.projectileType].Get();
-            bullet.layer = 16;
+            bullet.layer = 15;
 
             Projectile projectile = bullet.GetComponent<Projectile>();
 
