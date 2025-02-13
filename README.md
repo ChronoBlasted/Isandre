@@ -65,10 +65,11 @@ L’objectif est **d’éliminer les vagues d’ennemis** tout en maîtrisant le
 - **E** → Interagir  
 
 #### **Manette**  
-- **Stick gauche** → Déplacement  
-- **Stick droit** → Viser  
-- **RT (Trigger droit)** → Attaque à distance  
-- **X / Carré** → Interagir  
+- **Stick gauche** → Déplacement
+- **Stick droit** → Viser & Tirer
+- **A / LS / RS** → Saut rapide
+- **LT / X** → Courir
+- **B** → Interagir
 
 ### 🔫 Système de tir et projectiles  
 - **Tir simple** : Projectile unique  

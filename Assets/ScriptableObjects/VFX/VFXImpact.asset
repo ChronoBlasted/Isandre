@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b093c6d2a9e59b429ed9502dbdf36b1, type: 3}
-  m_Name: AssaultRiffleData
+  m_Script: {fileID: 11500000, guid: efb8bdf7da3460547bb78a08c63fb52f, type: 3}
+  m_Name: VFXImpact
   m_EditorClassIdentifier: 
-  type: 0
-  name: 
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
-  damage: 1
-  attackRate: 1
-  audioClipName: AttackDefault
-  projectileType: 0
-  amountProjectilePerFire: 1
-  spread: 0
+  type: 701
+  name: BulletImpact
+  sprite: {fileID: 21300000, guid: 32700198561e47044863cf80370fe63a, type: 3}
+  prefab: {fileID: 122632, guid: 47a6eaf00da4f324a9167c487dff2f4c, type: 3}
