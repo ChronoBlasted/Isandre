@@ -19,6 +19,7 @@ public enum ResourceType
     ______PROJECTILE______ = 300,
 
     NormalBullet = 301,
+    EnemyBullet = 302,
 
     ______UI______ = 400,
 

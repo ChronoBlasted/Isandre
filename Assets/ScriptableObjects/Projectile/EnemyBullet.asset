@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff87b4b56f7a1bf4b9b6cfb2d52bc984, type: 3}
   m_Name: EnemyBullet
   m_EditorClassIdentifier: 
-  type: 301
+  type: 302
   name: EnnemyBullet
   sprite: {fileID: 0}
   prefab: {fileID: 463923398377968615, guid: 1127d28e904b2da409bc6f03af58a049, type: 3}
