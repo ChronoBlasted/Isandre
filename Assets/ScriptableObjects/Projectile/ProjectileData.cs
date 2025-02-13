@@ -6,4 +6,5 @@ public class ProjectileData : ResourceObject
     public string hitAudioName = "BulletHit";
     public float speed;
     public float size;
+    public int damage;
 }

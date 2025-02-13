@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7522d3595cdbe4a91755b6f0e431b5, type: 3}
-  m_Name: PistolData
+  m_Script: {fileID: 11500000, guid: ff87b4b56f7a1bf4b9b6cfb2d52bc984, type: 3}
+  m_Name: EnemyBullet
   m_EditorClassIdentifier: 
-  type: 202
-  name: BasicPistol
+  type: 301
+  name: EnnemyBullet
   sprite: {fileID: 0}
-  prefab: {fileID: 1633766592178425325, guid: 2619297429cf48244b538298493042ea, type: 3}
+  prefab: {fileID: 463923398377968615, guid: 1127d28e904b2da409bc6f03af58a049, type: 3}
+  hitAudioName: BulletHit
+  speed: 5
+  size: 0.2
+  damage: 10

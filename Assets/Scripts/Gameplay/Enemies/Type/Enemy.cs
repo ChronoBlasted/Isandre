@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public Alive hpScript;
     public Animator animator, animatorVisual ;
     public CollectableSpawner Spawner;
+    public GameObject exp, life;
+    public int chance;
 
     [Header("Data")]
     public ScriptableEnnemy enemyData;
@@ -76,12 +78,19 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Die()
     {
-
         //GameObject Exp = PoolManager.Instance[ResourceType.Player].Get();
         //Exp.transform = null;
 
-        Destroy(gameObject);
+        //PoolManager 
 
+        int i = new int();
+        i = UnityEngine.Random.Range(0, 100);
+        if(i > chance)
+            Instantiate(exp, transform.position, transform.rotation );              
+        else
+            Instantiate(life, transform.position, transform.rotation );              
+               
+        Destroy(gameObject);
 
     }
 

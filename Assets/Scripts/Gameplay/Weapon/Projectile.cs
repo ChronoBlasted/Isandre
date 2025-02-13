@@ -9,11 +9,14 @@ public class Projectile : MonoBehaviour
     [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] ParticleSystem ps;
 
-    int damage;
+    public int damage;
 
     public void Init(int damage)
     {
         this.damage = damage;
+        
+        if (damage == 0)
+            damage = projectileData.damage;
 
         trailRenderer.Clear();
 
@@ -36,16 +39,19 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (!gameObject.activeSelf) return;
 
         if (collision.gameObject.layer == 9)
         {
+
             DoHit();
             return;
         }
 
-        if (collision.gameObject.TryGetComponent(out Alive _alive))
+        if (collision.gameObject.TryGetComponent(out Alive _alive) && collision.gameObject.layer == 15)
         {
+            
             _alive.ChangeLife(-damage);
 
             DoHit();
@@ -56,9 +62,11 @@ public class Projectile : MonoBehaviour
 
     private void DoHit()
     {
+        /*
         ps.transform.position = transform.position;
         ps.transform.SetParent(null);
         ps.Play();
+        */
 
         AudioManager.Instance.PlaySound(projectileData.hitAudioName);
 

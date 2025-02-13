@@ -30,7 +30,8 @@ public enum ResourceType
     RangeEnemy = 502,
     KamikazeEnemy = 503,
 
-    ______Collectable______ = 600,
+    ______COLLECTABLE______ = 600,
+
     Experience = 601,
     Life = 602,
 }
