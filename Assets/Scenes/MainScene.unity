@@ -1019,6 +1019,10 @@ PrefabInstance:
       propertyPath: model
       value: 
       objectReference: {fileID: 1494258363}
+    - target: {fileID: 5458770164453471118, guid: da0e6909f994b794481ac8b381d2a303, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7676610782728905961, guid: da0e6909f994b794481ac8b381d2a303, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000001322478
@@ -2089,7 +2093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 359426672}
-  resourceInPool: c8000000ca000000cb000000cc000000cd000000ce0000002c0100002d01000058020000590200005a020000
+  resourceInPool: c8000000ca000000cb000000cc000000cd000000ce0000002c0100002d01000058020000590200005a020000bc020000bd020000
   <DefaultPoolSize>k__BackingField: 10
   <MaxPoolSize>k__BackingField: 100
   collectionChecks: 1
@@ -2381,6 +2385,7 @@ MonoBehaviour:
   resources:
   - {fileID: 11400000, guid: 52483388e1a9f084eb6eea3bbbee822e, type: 2}
   - {fileID: 11400000, guid: c1e1b6ef90a7c924e91b284c28322194, type: 2}
+  - {fileID: 11400000, guid: c276237c9747e444e82167848c426097, type: 2}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

@@ -232,7 +232,9 @@ MonoBehaviour:
   animator: {fileID: 884156608407342977}
   animatorVisual: {fileID: 3338677245868832395}
   Spawner: {fileID: 0}
-  EXP: {fileID: 8205020302160941743, guid: bd0a861fd5d831a43b90521574736d76, type: 3}
+  exp: {fileID: 0}
+  life: {fileID: 0}
+  chance: 0
   enemyData: {fileID: 11400000, guid: 027f33166fc73314383401487d08f097, type: 2}
   target: {fileID: 0}
 --- !u!136 &7917265879703108658
@@ -254,7 +256,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.5
   m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.4, z: 0}

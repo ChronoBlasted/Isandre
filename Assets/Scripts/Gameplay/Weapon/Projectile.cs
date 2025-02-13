@@ -1,10 +1,12 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Projectile : MonoBehaviour
 {
     public ProjectileData projectileData;
+    public LayerMask layer;
 
     [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] ParticleSystem ps;
@@ -20,7 +22,7 @@ public class Projectile : MonoBehaviour
 
         trailRenderer.Clear();
 
-        ps.transform.SetParent(transform);
+        //ps.transform.SetParent(transform);
 
         transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one, .1f).SetEase(Ease.OutBack);
@@ -38,26 +40,33 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        
+    {        
         if (!gameObject.activeSelf) return;
+        GameObject vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
+        ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
+        vfx.transform.position = collision.GetContact(0).point;
+        particleSystem.Play();
+
+        if (collision.gameObject.layer == 16)
+        {
+            if(collision.gameObject.TryGetComponent(out Alive _alive))
+            {
+                Debug.Log("Ennemy or player collision");               
+
+                _alive.ChangeLife(-damage);               
+            }
+            DoHit();
+            return;
+        }
 
         if (collision.gameObject.layer == 9)
         {
-
+            Debug.Log("Wall Collision");
             DoHit();
             return;
         }
 
-        if (collision.gameObject.TryGetComponent(out Alive _alive) && collision.gameObject.layer == 15)
-        {
-            
-            _alive.ChangeLife(-damage);
-
-            DoHit();
-
-            return;
-        }
+        
     }
 
     private void DoHit()

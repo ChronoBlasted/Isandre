@@ -17,7 +17,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   prefab: {fileID: 1633766592178425325, guid: 2619297429cf48244b538298493042ea, type: 3}
   damage: 1
-  attackRate: 1
+  attackRate: 2
   audioClipName: AttackDefault
   projectileType: 301
   amountProjectilePerFire: 1

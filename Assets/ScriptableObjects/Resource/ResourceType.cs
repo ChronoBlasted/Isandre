@@ -34,6 +34,10 @@ public enum ResourceType
 
     Experience = 601,
     Life = 602,
+
+    ______VFX______ = 700,
+
+    BulletImpact = 701,
 }
 
 public enum WeaponType
