@@ -9,9 +9,9 @@ public class CollectableExperience : Collectable
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 15)
-        {
-            
-        }
+        //if (other.gameObject.layer == 15 && other.gameObject.TryGetComponent<Player>)
+        //{
+        //    
+        //}
     }
 }
