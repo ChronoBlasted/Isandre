@@ -1,0 +1,14 @@
+{
+    "type": 101,
+    "name": "Player",
+    "sprite": {
+        "instanceID": 0
+    },
+    "prefab": {
+        "instanceID": 65052
+    },
+    "health": 100,
+    "walkSpeed": 4.0,
+    "runSpeed": 70.0,
+    "dashForce": 25.0
+}
