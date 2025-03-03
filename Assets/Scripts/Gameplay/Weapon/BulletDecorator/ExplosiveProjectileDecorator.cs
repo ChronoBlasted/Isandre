@@ -23,11 +23,14 @@ public class ExplosiveProjectileDecorator : ProjectileDecorator
         if (baseBehaviour != null)
         {
             Projectile proj = baseBehaviour.Projectile;
-
-            
-
             // Recherche des cibles dans le rayon d'explosion.
             Collider[] hitColliders = Physics.OverlapSphere(proj.transform.position, explosionRadius);
+
+            GameObject vfx = PoolManager.Instance[ResourceType.ExploseImpact].Get();
+            ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
+            vfx.transform.position = proj.transform.position;
+            particleSystem.Play();
+
             foreach (var hitCollider in hitColliders)
             {
                 if(hitCollider.gameObject.layer != LayerMask.NameToLayer("Enemy"))
@@ -35,12 +38,8 @@ public class ExplosiveProjectileDecorator : ProjectileDecorator
                     continue;
                 }
 
-                Debug.Log("Explosion");
-
-                GameObject vfx = PoolManager.Instance[ResourceType.ExploseImpact].Get();
-                ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
-                vfx.transform.position = hitCollider.transform.position;
-                particleSystem.Play();
+                Debug.Log("Explosion");              
+                
 
                 // Appliquer des dégâts si l'objet possède un composant 'Alive'
                 Alive alive = hitCollider.GetComponent<Alive>();
@@ -81,6 +80,7 @@ public class ChainProjectileDecorator : ProjectileDecorator
     public override void OnHit()
     {
         BasicProjectileBehaviour baseBehaviour = decoratedBehaviour as BasicProjectileBehaviour;
+
         if (baseBehaviour != null)
         {
             Projectile proj = baseBehaviour.Projectile;
@@ -99,12 +99,17 @@ public class ChainProjectileDecorator : ProjectileDecorator
                 }
                 else
                 {
+                    if (nbOfChain <= 0)
+                    {
+                        base.OnHit();
+                    }
+
                     float distance = Vector3.Distance(proj.transform.position, hit.transform.position);
                     if (distance < minDistance)
                     {
                         minDistance = distance;
-                        target = hit.transform;
-                        nbOfChain--;
+                        target = hit.transform;                        
+                        nbOfChain--;                        
                     }
                 }
             }
@@ -118,10 +123,7 @@ public class ChainProjectileDecorator : ProjectileDecorator
                 return; // Le projectile ne se libère pas, il continue sa trajectoire.
             }
         }
-        if(nbOfChain == 0)
-        {
-            base.OnHit();
-        }
+        
 
         // Si aucune cible n'est trouvée, on libère le projectile normalement.
         base.OnHit();

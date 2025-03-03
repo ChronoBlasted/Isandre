@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 702
   name: Explosion
   sprite: {fileID: 21300000, guid: 07caf3d1930bab14aa8f6dcdf2db871a, type: 3}
-  prefab: {fileID: 178932, guid: ef25cc232e149234097d8ac347aa6e11, type: 3}
+  prefab: {fileID: 4593184484909914552, guid: 2e1e9506f5904a64b81744324fb7cd50, type: 3}

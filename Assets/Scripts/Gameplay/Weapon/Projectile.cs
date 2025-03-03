@@ -75,7 +75,7 @@ public class Projectile : MonoBehaviour
 
         GameObject vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
         ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
-        vfx.transform.position = other.transform.position;
+        vfx.transform.position = transform.position;
         particleSystem.Play();
 
         if (other.gameObject.layer == 16)
