@@ -2199,8 +2199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 359426672}
   resourceInPool: c8000000ca000000cb000000cc000000cd000000ce0000002c0100002d0100002e01000058020000590200005a020000bc020000bd020000be020000
-  <DefaultPoolSize>k__BackingField: 10
-  <MaxPoolSize>k__BackingField: 100
+  <DefaultPoolSize>k__BackingField: 20
+  <MaxPoolSize>k__BackingField: 200
   collectionChecks: 1
 --- !u!1 &365946362
 GameObject:
