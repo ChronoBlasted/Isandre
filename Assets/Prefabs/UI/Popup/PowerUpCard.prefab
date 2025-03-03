@@ -757,6 +757,7 @@ MonoBehaviour:
   cardTitle: {fileID: 1498241540245771024}
   cardDescription: {fileID: 3973362668303340867}
   cardImg: {fileID: 0}
+  panelBackground: {fileID: 3758754960475396835}
   CurrentPowerUp: {fileID: 0}
 --- !u!1 &7533078575423093103
 GameObject:

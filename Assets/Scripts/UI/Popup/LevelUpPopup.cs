@@ -24,6 +24,7 @@ public class LevelUpPopup : Popup
             newCard.SetTitle(powerUp.title);
             newCard.SetDescription(powerUp.Description);
             newCard.CurrentPowerUp = powerUp;
+            newCard.SetBackground();
             powerUpCardInstantier.Add(newCard.gameObject);
         }
     }

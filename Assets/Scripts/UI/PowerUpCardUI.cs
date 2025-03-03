@@ -6,7 +6,7 @@ public class PowerUpCardUI : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI cardTitle;
     [SerializeField] TMPro.TextMeshProUGUI cardDescription;
     [SerializeField] Image cardImg;
-    [SerializeField] SpriteRenderer panelBackground;
+    [SerializeField] Image panelBackground;
 
     [HideInInspector]
     public PowerUp CurrentPowerUp;
@@ -24,6 +24,24 @@ public class PowerUpCardUI : MonoBehaviour
     public void SetImage(Image image)
     {
         cardImg.sprite = image.sprite;
+    }
+
+    public void SetBackground()
+    {
+        switch(CurrentPowerUp.rarity)
+        {
+            case RarityEnum.Common:
+                panelBackground.color = RarityColor.Commun;
+                break;
+            case RarityEnum.Rare:
+                panelBackground.color = RarityColor.Rare;
+                break;
+            case RarityEnum.Epic:
+                panelBackground.color = RarityColor.Epic;
+                break;
+
+
+        }
     }
 
     public void ClosePopup()
