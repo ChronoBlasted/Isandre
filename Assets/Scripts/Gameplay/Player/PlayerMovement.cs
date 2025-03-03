@@ -1,3 +1,4 @@
+using Codice.CM.Common.Checkin.Partial;
 using System.Collections;
 using System.Threading.Tasks;
 using Unity.Cinemachine;
@@ -8,6 +9,7 @@ using static PlayerAnimation;
 public class PlayerMovement : MonoBehaviour
 {
     public InteractableBehaviour InteractableSelected;
+    public bool enableInput = true;
 
     [SerializeField] EntityData data;
     [SerializeField] string footstepAudioName = "Footstep";
@@ -31,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!enableInput)
+            return;
+        
         movementInput = movement.action.ReadValue<Vector2>();
         mousePosition = mousePos.action.ReadValue<Vector2>();
         isRunning = run.action.IsPressed();

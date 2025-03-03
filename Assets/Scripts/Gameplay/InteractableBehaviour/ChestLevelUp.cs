@@ -1,4 +1,6 @@
 using MoreMountains.Feedbacks;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ChestLevelUp : InteractableBehaviour
@@ -16,6 +18,16 @@ public class ChestLevelUp : InteractableBehaviour
     public override void OnInteract()
     {
         base.OnInteract();
+        List<PowerUp> newPowerUp = new()
+        {
+            data.basicPowerUp[0],
+            data.rarePowerUp[0],
+            data.epicPowerUp[0],
+        };
+        UIManager.Instance.LevelUpPopup.SetPowerUp(newPowerUp);
+        UIManager.Instance.AddPopup(UIManager.Instance.LevelUpPopup);
+
+        
         //SpawnUi and selected powerup
     }
     private void OnTriggerEnter(Collider other)

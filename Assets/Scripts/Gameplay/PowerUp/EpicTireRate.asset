@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fbbe00a8120f04083aec81d3da810d, type: 3}
   m_Name: EpicTireRate
   m_EditorClassIdentifier: 
-  name: Tir Rate +++
+  title: Tire Rate +++
   Description: M@CHINE GUN ?!!
   attackRateMultiplier: 1.6

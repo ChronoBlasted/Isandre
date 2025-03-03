@@ -13,11 +13,13 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] EndView _endGameView;
     [SerializeField] LoadingView _loadingView;
 
+
     [Header("Black Shade Ref")]
     [SerializeField] Button _blackShadeButton;
     [SerializeField] Image _blackShadeImg;
 
     //[Header("Popup Ref")]
+    [SerializeField] LevelUpPopup _levelUpPopup;
     //[SerializeField] InventoryPopup _inventoryPopup;
 
     View _currentView;
@@ -27,6 +29,7 @@ public class UIManager : MonoSingleton<UIManager>
     public GameView GameView { get => _gameView; }
     public EndView EndGameView { get => _endGameView; }
     public LoadingView LoadingView { get => _loadingView; }
+    public LevelUpPopup LevelUpPopup { get => _levelUpPopup; }
 
     Tweener _blackShadeTweener;
 
@@ -43,6 +46,7 @@ public class UIManager : MonoSingleton<UIManager>
         _gameView.Init();
         _endGameView.Init();
         _loadingView.Init();
+        _levelUpPopup.Init();
 
         HideBlackShade();
     }
@@ -93,6 +97,11 @@ public class UIManager : MonoSingleton<UIManager>
     public void AddPopup(Popup newPopup)
     {
         newPopup.OpenPopup();
+    }
+
+    public void ClosePopup(Popup newPopup)
+    {
+        newPopup.ClosePopup();
     }
     #endregion
 

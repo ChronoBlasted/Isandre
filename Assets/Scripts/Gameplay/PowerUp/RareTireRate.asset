@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fbbe00a8120f04083aec81d3da810d, type: 3}
   m_Name: RareTireRate
   m_EditorClassIdentifier: 
-  name: 'Tire Rate ++ '
+  title: Tir Rate ++
   Description: Increase A lot Tire rate
   attackRateMultiplier: 1.4
