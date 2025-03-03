@@ -213,7 +213,9 @@ MonoBehaviour:
   animator: {fileID: 2858052951129982570}
   animatorVisual: {fileID: 4879955882667858894}
   Spawner: {fileID: 0}
-  EXP: {fileID: 8205020302160941743, guid: bd0a861fd5d831a43b90521574736d76, type: 3}
+  exp: {fileID: 0}
+  life: {fileID: 0}
+  chance: 0
   enemyData: {fileID: 11400000, guid: 83c05f5e9799236429c20a1e60e05ba7, type: 2}
   target: {fileID: 0}
   spawnerList:
@@ -337,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: -1924330416772942832, guid: 37a7f74a1ce64514e9ed23cb0048378e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 38915dd96770ae94c90c9874df62e14e, type: 2}
     - target: {fileID: 919132149155446097, guid: 37a7f74a1ce64514e9ed23cb0048378e, type: 3}
       propertyPath: m_Name
       value: character-male-c
@@ -357,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6435320000920075851, guid: 37a7f74a1ce64514e9ed23cb0048378e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 38915dd96770ae94c90c9874df62e14e, type: 2}
     - target: {fileID: 8303906797054990637, guid: 37a7f74a1ce64514e9ed23cb0048378e, type: 3}
       propertyPath: m_Layer
       value: 16

@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpreadRandomShootBehaviour : DistanceAttackBehaviour
 {
     public override void SetupProjectile(Weapon weapon, Projectile projectile, int i)
-    {
+    {        
         base.SetupProjectile(weapon, projectile, i);
 
         DistanceWeaponData data = (DistanceWeaponData)weapon.weaponData;

@@ -95,14 +95,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fdcf868ae9163c147a908b01e3254960, type: 2}
     - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-      propertyPath: shootBehaviour
-      value: 
-      objectReference: {fileID: 436727397649535572}
-    - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-      propertyPath: attackBehaviour
-      value: 
-      objectReference: {fileID: 436727397649535572}
-    - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: layerToAttack.m_Bits
       value: 65536
       objectReference: {fileID: 0}
@@ -127,28 +119,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2470886987716064383, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8936105278504238838}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6364777364057505995, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 436727397649535572}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
---- !u!1 &1633766592178425325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6364777364057505995, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-  m_PrefabInstance: {fileID: 5690427070000811302}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &436727397649535572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633766592178425325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e76745a005d774fb4c0d02702f965e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2495350542430262211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7807325707478507237, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}

@@ -14,9 +14,17 @@ public abstract class DistanceAttackBehaviour : AttackBehaviour
         for (int i = 1; i <= data.amountProjectilePerFire; i++)
         {
             GameObject bullet = PoolManager.Instance[(ResourceType)data.projectileType].Get();
-            bullet.layer = 16;
+            bullet.layer = 15;
 
             Projectile projectile = bullet.GetComponent<Projectile>();
+
+            if (PlayerManager.Instance.playerWeapon != null)
+            {
+                foreach (var decoratorFunc in PlayerManager.Instance.playerWeapon.bulletDecoratorFuncs)
+                {
+                    projectile.projectileBehaviour = decoratorFunc(projectile.projectileBehaviour);
+                }
+            }
 
             bullet.transform.SetParent(weapon.firePoint);
             SetupProjectile(weapon, projectile, i);

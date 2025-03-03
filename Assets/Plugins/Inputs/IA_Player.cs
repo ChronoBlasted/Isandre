@@ -106,7 +106,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""d8bf19ac-3bd0-41df-b656-521de834e9eb"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
@@ -128,7 +128,7 @@ public partial class @IA_Player: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""253ef76b-b618-4656-9674-08c2bd768be9"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",

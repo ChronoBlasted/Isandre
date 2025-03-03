@@ -87,6 +87,6 @@ public class PoolManager : MonoSingleton<PoolManager>
 
     private void Start()
     {
-        Debug.LogError("UnityEngine missmatch, you must send feet pic to enable UnityPersonal");
+        //Debug.LogError("UnityEngine missmatch, you must send feet pic to enable UnityPersonal");
     }
 }

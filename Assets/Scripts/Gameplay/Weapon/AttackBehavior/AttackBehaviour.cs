@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class AttackBehaviour : MonoBehaviour
+public abstract class AttackBehaviour : IAttackBehaviour
 {
     public virtual void Attack(Weapon weapon)
     {

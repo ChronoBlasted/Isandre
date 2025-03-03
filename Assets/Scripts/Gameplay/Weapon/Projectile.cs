@@ -10,37 +10,42 @@ public class Projectile : MonoBehaviour
     [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] ParticleSystem ps;
 
+    public GameObject lastHitEnemy;
+
     public int damage;
+    private GameObject vfx;
+
+    // Champ pour le comportement décoré du projectile.
+    public IProjectileBehaviour projectileBehaviour;
 
     public void Init(int damage)
     {
-        this.damage = damage;
-        
-        if (damage == 0)
-            damage = projectileData.damage;
-
+        this.damage = (damage == 0 ? projectileData.damage : damage);
+        lastHitEnemy = null;
         trailRenderer.Clear();
-
-        //ps.transform.SetParent(transform);
-
         transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one, .1f).SetEase(Ease.OutBack);
+        
+        projectileBehaviour = new BasicProjectileBehaviour(this);
+
+        if (PlayerManager.Instance.playerWeapon != null)
+        {
+            foreach (var decoratorFunc in PlayerManager.Instance.playerWeapon.bulletDecoratorFuncs)
+            {
+                projectileBehaviour = decoratorFunc(projectileBehaviour);
+            }
+        }
     }
 
     private void Update()
     {
         transform.position += projectileData.speed * Time.deltaTime * transform.forward;
-
-    }
-
-    private void OnDisable()
-    {
-
     }
 
     private void OnCollisionEnter(Collision collision)
-    {        
-        if (!gameObject.activeSelf) return;
+    {
+        /*if (!gameObject.activeSelf) return;
+
         GameObject vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
         ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
         vfx.transform.position = collision.GetContact(0).point;
@@ -48,39 +53,73 @@ public class Projectile : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if(collision.gameObject.TryGetComponent(out Alive _alive))
+            if (collision.gameObject.TryGetComponent(out Alive _alive))
             {
-                Debug.Log("Ennemy or player collision");               
-
-                _alive.ChangeLife(-damage);               
+                Debug.Log("Collision avec enemy ou player");
+                _alive.ChangeLife(-damage);
             }
-            DoHit();
+            HandleHit();
             return;
         }
 
         if (collision.gameObject.layer == 9)
         {
-            Debug.Log("Wall Collision");
-            DoHit();
+            Debug.Log("Collision avec un mur");
+            HandleHit();
             return;
-        }
+        }*/
     }
 
-    private void DoHit()
+    private void OnTriggerEnter(Collider other)
     {
-        /*
-        ps.transform.position = transform.position;
-        ps.transform.SetParent(null);
-        ps.Play();
-        */
+        if (!gameObject.activeSelf) return;
 
+        vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
+        ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
+        vfx.transform.position = transform.position;
+        particleSystem.Play();
+
+        Destroy(vfx, 2f);
+
+        if (other.gameObject.layer == 16)
+        {
+            lastHitEnemy = other.gameObject;
+            if (other.gameObject.TryGetComponent(out Alive _alive))
+            {
+                Debug.Log("Collision avec enemy ou player");
+                _alive.ChangeLife(-damage);
+            }
+            HandleHit();
+            return;
+        }
+
+        if (other.gameObject.layer == 9)
+        {
+            Debug.Log("Collision avec un mur");
+            HandleHit();
+            return;
+        }
+
+    }
+
+    private void HandleHit()
+    {
+        if (projectileBehaviour != null)
+            projectileBehaviour.OnHit();
+        else
+            DoHit();
+    }
+
+    // Méthode de secours si aucun décorateur n'est défini.
+    public virtual void DoHit()
+    {
         AudioManager.Instance.PlaySound(projectileData.hitAudioName);
-
         Release();
     }
 
-    private void Release()
+    public void Release()
     {
         PoolManager.Instance[projectileData.type].Release(gameObject);
+        //PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
     }
 }
