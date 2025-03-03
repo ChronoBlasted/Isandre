@@ -10,6 +10,10 @@ public class Weapon : MonoBehaviour
 
     float timeSinceLastAttack = 0f;
 
+    private void Start()
+    {
+        weaponData = Instantiate(weaponData);
+    }
     private void Update()
     {
         timeSinceLastAttack += Time.deltaTime;

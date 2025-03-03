@@ -7,6 +7,6 @@ public class PowerUpTireRateIncrease : PowerUp
     public override void OnUse()
     {
         base.OnUse();
-        PlayerManager.Instance.playerWeapon.currentWeapon.weaponData.attackRate = PlayerManager.Instance.playerWeapon.currentWeapon.weaponData.attackRate / attackRateMultiplier;
+        PlayerManager.Instance.playerWeapon.currentWeapon.weaponData.attackRate = PlayerManager.Instance.playerWeapon.currentWeapon.weaponData.attackRate * attackRateMultiplier;
     }
 }

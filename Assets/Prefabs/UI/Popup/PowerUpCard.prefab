@@ -471,7 +471,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 326.6}
-  m_SizeDelta: {x: 158.91, y: 50.410004}
+  m_SizeDelta: {x: 418.1, y: 50.410004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8401667768291743372
 CanvasRenderer:
@@ -757,6 +757,7 @@ MonoBehaviour:
   cardTitle: {fileID: 1498241540245771024}
   cardDescription: {fileID: 3973362668303340867}
   cardImg: {fileID: 0}
+  CurrentPowerUp: {fileID: 0}
 --- !u!1 &7533078575423093103
 GameObject:
   m_ObjectHideFlags: 0

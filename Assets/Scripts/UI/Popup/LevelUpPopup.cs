@@ -23,6 +23,7 @@ public class LevelUpPopup : Popup
             PowerUpCardUI newCard = Instantiate(cardPrefab, cardParent);
             newCard.SetTitle(powerUp.title);
             newCard.SetDescription(powerUp.Description);
+            newCard.CurrentPowerUp = powerUp;
             powerUpCardInstantier.Add(newCard.gameObject);
         }
     }

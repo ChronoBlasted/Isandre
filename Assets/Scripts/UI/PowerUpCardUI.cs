@@ -6,6 +6,10 @@ public class PowerUpCardUI : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI cardTitle;
     [SerializeField] TMPro.TextMeshProUGUI cardDescription;
     [SerializeField] Image cardImg;
+    [SerializeField] SpriteRenderer panelBackground;
+
+    [HideInInspector]
+    public PowerUp CurrentPowerUp;
 
     public void SetTitle(string title)
     {
@@ -24,6 +28,7 @@ public class PowerUpCardUI : MonoBehaviour
 
     public void ClosePopup()
     {
+        CurrentPowerUp.OnUse();
         UIManager.Instance.ClosePopup(UIManager.Instance.LevelUpPopup);
     }
 }

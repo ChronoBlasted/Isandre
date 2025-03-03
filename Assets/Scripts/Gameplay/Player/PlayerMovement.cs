@@ -1,4 +1,3 @@
-using Codice.CM.Common.Checkin.Partial;
 using System.Collections;
 using System.Threading.Tasks;
 using Unity.Cinemachine;
@@ -40,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         mousePosition = mousePos.action.ReadValue<Vector2>();
         isRunning = run.action.IsPressed();
 
-
         UpdateAnimation();
     }
 
@@ -74,9 +72,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     void LateUpdate()
     {
+        if (!enableInput)
+            return;
+
         Move(movementInput);
 
         RotatePlayer();
@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if (InteractableSelected)
+        if (InteractableSelected && enableInput)
         {
             InteractableSelected.OnInteract();
         }
