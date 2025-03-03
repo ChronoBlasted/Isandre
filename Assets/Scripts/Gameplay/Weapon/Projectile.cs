@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     public GameObject lastHitEnemy;
 
     public int damage;
+    private GameObject vfx;
 
     // Champ pour le comportement décoré du projectile.
     public IProjectileBehaviour projectileBehaviour;
@@ -73,10 +74,12 @@ public class Projectile : MonoBehaviour
     {
         if (!gameObject.activeSelf) return;
 
-        GameObject vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
+        vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
         ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
         vfx.transform.position = transform.position;
         particleSystem.Play();
+
+        Destroy(vfx, 2f);
 
         if (other.gameObject.layer == 16)
         {
@@ -117,5 +120,6 @@ public class Projectile : MonoBehaviour
     public void Release()
     {
         PoolManager.Instance[projectileData.type].Release(gameObject);
+        //PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
     }
 }

@@ -31,6 +31,8 @@ public class ExplosiveProjectileDecorator : ProjectileDecorator
             vfx.transform.position = proj.transform.position;
             particleSystem.Play();
 
+            GameObject.Destroy(vfx, 3f);
+
             foreach (var hitCollider in hitColliders)
             {
                 if(hitCollider.gameObject.layer != LayerMask.NameToLayer("Enemy"))
