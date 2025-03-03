@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChestLevelUpData
   m_EditorClassIdentifier: 
   basicPowerUp:
-  - {fileID: 11400000, guid: 4e311a32ae0132d4aabaaac2f08b7306, type: 2}
+  - {fileID: 11400000, guid: 8af46b41aec94b7409711d2b70a25163, type: 2}
   rarePowerUp:
   - {fileID: 11400000, guid: e8f6d0424b396ce4283c703400e7a0db, type: 2}
   epicPowerUp:
