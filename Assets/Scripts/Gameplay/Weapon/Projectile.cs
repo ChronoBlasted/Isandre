@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Projectile : MonoBehaviour
 {
@@ -47,7 +46,7 @@ public class Projectile : MonoBehaviour
         vfx.transform.position = collision.GetContact(0).point;
         particleSystem.Play();
 
-        if (collision.gameObject.layer == 16)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             if(collision.gameObject.TryGetComponent(out Alive _alive))
             {
@@ -65,8 +64,6 @@ public class Projectile : MonoBehaviour
             DoHit();
             return;
         }
-
-        
     }
 
     private void DoHit()

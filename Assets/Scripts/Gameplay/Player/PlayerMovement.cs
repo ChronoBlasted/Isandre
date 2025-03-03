@@ -7,11 +7,13 @@ using static PlayerAnimation;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public InteractableBehaviour InteractableSelected;
+
     [SerializeField] EntityData data;
     [SerializeField] string footstepAudioName = "Footstep";
     [SerializeField] LayerMask layerMask;
     [SerializeField] Rigidbody rb;
-    [SerializeField] InputActionReference movement, dash, run, mousePos;
+    [SerializeField] InputActionReference movement, dash, run, mousePos, interact;
 
     Camera cam;
     PlayerManager pManager;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         cam = CameraManager.Instance.currentCamera;
         pManager = PlayerManager.Instance;
+        interact.action.started += Interact;
     }
 
     void Update()
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         movementInput = movement.action.ReadValue<Vector2>();
         mousePosition = mousePos.action.ReadValue<Vector2>();
         isRunning = run.action.IsPressed();
+
 
         UpdateAnimation();
     }
@@ -111,5 +115,13 @@ public class PlayerMovement : MonoBehaviour
     {
         dash.action.performed -= Dash;
 
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (InteractableSelected)
+        {
+            InteractableSelected.OnInteract();
+        }
     }
 }

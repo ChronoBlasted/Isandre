@@ -13,7 +13,7 @@ public class PlayerWeapon : MonoBehaviour
 
     Vector3 positionToLook;
     Vector2 mousePosition;
-    Weapon currentWeapon;
+    public Weapon currentWeapon;
     DistanceWeaponData weaponData;
 
     private void Start()

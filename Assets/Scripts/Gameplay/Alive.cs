@@ -1,7 +1,6 @@
-using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class Alive : MonoBehaviour
 {
     public int currentLife;
@@ -9,6 +8,7 @@ public class Alive : MonoBehaviour
     public UnityEvent dieEvent;
     public UnityEvent hitEvent;
     public bool Add, Subtract, data;
+    public MMF_Player dieFeedbacks;
 
     public void InitWithData(int data)
     {
@@ -39,14 +39,6 @@ public class Alive : MonoBehaviour
             Subtract = false;
         }
     }
-    public void PlayerDie()
-    {
-        GameManager.Instance.ReloadScene();
-    }
-
-
-
-
     public void ChangeLife(int _i)
     {
         currentLife += _i;
@@ -95,6 +87,12 @@ public class Alive : MonoBehaviour
         }
 
         hitEvent.Invoke();
+    }
+
+    public void Die()
+    {
+        dieFeedbacks.PlayFeedbacks();
+        dieEvent.Invoke();
     }
 
 }

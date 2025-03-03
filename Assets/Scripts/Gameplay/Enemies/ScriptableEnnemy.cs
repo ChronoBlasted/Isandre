@@ -8,5 +8,6 @@ public class ScriptableEnnemy : ScriptableObject
     public int enemyLife;
     public int ennemyspeed;
     public int AttackTime;
-    public GameObject Projectile;           
+    public GameObject Projectile;
+    public int xpGain;
 }
