@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3aa29e8593b37468b098dd2f2d8ed6, type: 3}
-  m_Name: EnemyRange
+  m_Script: {fileID: 11500000, guid: efb8bdf7da3460547bb78a08c63fb52f, type: 3}
+  m_Name: ExplodeImpact
   m_EditorClassIdentifier: 
-  enemyName: The Archer LEBOGOSS
-  enemyRange: 5
-  enemyLife: 500
-  ennemyspeed: 1
-  AttackTime: 1
-  Projectile: {fileID: 3327562380243906994, guid: 9892a5b95ca637a4a8ede422b02f2557, type: 3}
+  type: 702
+  name: Explosion
+  sprite: {fileID: 21300000, guid: 07caf3d1930bab14aa8f6dcdf2db871a, type: 3}
+  prefab: {fileID: 178932, guid: ef25cc232e149234097d8ac347aa6e11, type: 3}

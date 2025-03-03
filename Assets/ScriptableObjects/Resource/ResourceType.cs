@@ -39,6 +39,7 @@ public enum ResourceType
     ______VFX______ = 700,
 
     BulletImpact = 701,
+    ExploseImpact = 702,
 }
 
 public enum WeaponType

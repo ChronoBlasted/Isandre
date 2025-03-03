@@ -27,15 +27,11 @@ PrefabInstance:
     - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: weaponData
       value: 
-      objectReference: {fileID: 11400000, guid: 7723f73619b34884c8016758ceeb339d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: shootBehaviour
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-      propertyPath: attackBehaviour
-      value: 
-      objectReference: {fileID: 8502024913575774379}
     - target: {fileID: 8596905110631698332, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
       propertyPath: layerToAttack.m_Bits
       value: 65536
@@ -55,25 +51,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6364777364057505995, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8502024913575774379}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
---- !u!1 &1633766592178425325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6364777364057505995, guid: 2879ded3228ebe04a8b5c1194fac3dc9, type: 3}
-  m_PrefabInstance: {fileID: 5690427070000811302}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8502024913575774379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633766592178425325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247320468dc0d104f877ee8ebf9daea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

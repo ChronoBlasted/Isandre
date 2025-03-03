@@ -6,8 +6,13 @@ public class Weapon : MonoBehaviour
 {
     public WeaponData weaponData;
     public Transform firePoint;
-    public AttackBehaviour attackBehaviour;
-    public List<AttackBehaviour> otherBehaviour;
+
+    // Remplacez la référence MonoBehaviour par une référence à l'interface
+    public IAttackBehaviour attackBehaviour;
+
+    // Options pour activer le décorateur
+    public bool useMultiShot = false;    
+
     public ParticleSystem ps;
     public LayerMask layerToAttack;
 
@@ -15,22 +20,8 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        Init();
-    }
-
-    private void OnEnable()
-    {
-        Init();
-    }
-
-    public void Init()
-    {
-        otherBehaviour = new List<AttackBehaviour>();
-        AttackBehaviour[] bhList = transform.GetComponentsInChildren<AttackBehaviour>() as AttackBehaviour[];
-        for (int i = 0; i < bhList.Length; i++) 
-        {
-            otherBehaviour.Add(bhList[i]);
-        }
+        // Instanciation du comportement de base
+        attackBehaviour = new DefaultShootBehaviour();       
     }
 
     private void Update()
@@ -44,18 +35,8 @@ public class Weapon : MonoBehaviour
         {
             attackBehaviour.Attack(this);
 
-            if(otherBehaviour.Count > 0)
-            {
-                foreach(AttackBehaviour behaviour in otherBehaviour)
-                {
-                    behaviour.Attack(this);
-                }
-                //Debug.Break();
-            }
-
             if (ps != null) ps.Play();
             AudioManager.Instance.PlaySound(weaponData.audioClipName);
-
             CameraManager.Instance.ShakeCamera();
 
             timeSinceLastAttack = 0f;

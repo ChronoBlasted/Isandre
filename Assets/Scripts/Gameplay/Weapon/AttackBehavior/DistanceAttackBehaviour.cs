@@ -18,6 +18,14 @@ public abstract class DistanceAttackBehaviour : AttackBehaviour
 
             Projectile projectile = bullet.GetComponent<Projectile>();
 
+            if (PlayerManager.Instance.playerWeapon != null)
+            {
+                foreach (var decoratorFunc in PlayerManager.Instance.playerWeapon.bulletDecoratorFuncs)
+                {
+                    projectile.projectileBehaviour = decoratorFunc(projectile.projectileBehaviour);
+                }
+            }
+
             bullet.transform.SetParent(weapon.firePoint);
             SetupProjectile(weapon, projectile, i);
             bullet.transform.SetParent(null);

@@ -13,7 +13,7 @@ public class KickAttackBehaviour : AttackBehaviour
 
         PlayerManager.Instance.playerAnimation.animator.SetTrigger(PLAYER_ANIMATION_PARAMETER.KICK_RIGHT.ToString());
 
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position + transform.forward, data.range, weapon.layerToAttack);
+        Collider[] hitEnemies = Physics.OverlapSphere(weapon.transform.position + weapon.transform.forward, data.range, weapon.layerToAttack);
 
         foreach (Collider collider in hitEnemies)
         {
@@ -30,6 +30,6 @@ public class KickAttackBehaviour : AttackBehaviour
     {
         MeleeWeaponData data = (MeleeWeaponData)weapon.weaponData;
 
-        Gizmos.DrawWireSphere(transform.position + transform.forward, data.range);
+        Gizmos.DrawWireSphere(weapon.transform.position + weapon.transform.forward, data.range);
     }
 }
