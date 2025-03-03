@@ -18,3 +18,4 @@ MonoBehaviour:
   ennemyspeed: 1
   AttackTime: 1
   Projectile: {fileID: 3327562380243906994, guid: 9892a5b95ca637a4a8ede422b02f2557, type: 3}
+  xpGain: 100

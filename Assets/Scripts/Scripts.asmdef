@@ -2,6 +2,8 @@
     "name": "Scripts",
     "rootNamespace": "",
     "references": [
+        "MoreMountains.Feedbacks",
+        "MoreMountains.Tools",
         "GUID:ec728d0d3d345a3449f984a0386c4bd3",
         "GUID:75469ad4d38634e559750d17036d5f7c",
         "GUID:4307f53044263cf4b835bd812fc161a4",

@@ -50,7 +50,7 @@ public class Projectile : MonoBehaviour
         vfx.transform.position = collision.GetContact(0).point;
         particleSystem.Play();
 
-        if (collision.gameObject.layer == 16)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             if (collision.gameObject.TryGetComponent(out Alive _alive))
             {
@@ -96,6 +96,7 @@ public class Projectile : MonoBehaviour
             HandleHit();
             return;
         }
+
     }
 
     private void HandleHit()

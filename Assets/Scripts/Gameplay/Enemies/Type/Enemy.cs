@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
         {
             hpScript = _hpScript;
             hpScript.InitWithData(enemyData.enemyLife);
+            hpScript.dieEvent.AddListener(Die);
             //hpScript.dieEvent.AddListener(Die);
             //hpScript.hitEvent.AddListener(Hitted);
         }
@@ -79,14 +80,15 @@ public class Enemy : MonoBehaviour
 
         //PoolManager 
 
-        int i = new int();
+/*        int i = new int();
         i = UnityEngine.Random.Range(0, 100);
         if(i > chance)
             Instantiate(exp, transform.position, transform.rotation );              
         else
-            Instantiate(life, transform.position, transform.rotation );              
-               
-        Destroy(gameObject);
+            Instantiate(life, transform.position, transform.rotation );*/
+
+        PlayerManager.Instance.PlayerLeveling.GainXP(enemyData.xpGain);
+        //Destroy(gameObject);
 
     }
 

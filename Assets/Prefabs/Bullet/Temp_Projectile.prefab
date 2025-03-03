@@ -150,6 +150,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData: {fileID: 11400000, guid: 8efb83f0649e66842a71a591cf1a3593, type: 2}
+  layer:
+    serializedVersion: 2
+    m_Bits: 32768
   trailRenderer: {fileID: 0}
   ps: {fileID: 0}
   damage: 3

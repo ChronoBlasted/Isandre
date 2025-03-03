@@ -21,7 +21,7 @@ public class Popup : MonoBehaviour
         gameObject.SetActive(true);
 
         transform.localScale = Vector3.zero;
-        transform.DOScale(1, .2f).SetEase(Ease.OutBack);
+        transform.DOScale(1, .2f).SetEase(Ease.OutBack).SetUpdate(true);
 
         _canvasGroup.DOFade(1, .2f).OnComplete(() =>
         {

@@ -1,9 +1,9 @@
 using UnityEngine;
-
 public class EnemyMeleeHitBox : MonoBehaviour
 {
     public int speed;
     public int damage;
+
 
     void Update()
     {
