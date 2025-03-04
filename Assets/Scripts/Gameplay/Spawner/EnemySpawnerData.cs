@@ -10,6 +10,11 @@ public class EnemySpawnerData : ScriptableObject
 
     public float spawnEnemyDelay;
 
+    [Header("Wave")]
+    public float waveDelay;
+    public float waveDuration;
+    public float spawnEnemyDelayOnWave;
+
     [Header("Difficulty")]
     public float difficultyIncreaseDelay;
     public int lifeIncrease;
