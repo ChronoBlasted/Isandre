@@ -9,6 +9,7 @@ public class Alive : MonoBehaviour
     public UnityEvent hitEvent;
     public bool Add, Subtract, data;
     public MMF_Player dieFeedbacks;
+    bool isDie;
 
     public void InitWithData(int data)
     {
@@ -41,6 +42,9 @@ public class Alive : MonoBehaviour
     }
     public void ChangeLife(int _i)
     {
+        if (isDie)
+            return;
+
         currentLife += _i;
 
         if (currentLife > maxLife)
@@ -91,6 +95,7 @@ public class Alive : MonoBehaviour
 
     public void Die()
     {
+        isDie = true;
         dieEvent.Invoke();
         dieFeedbacks.PlayFeedbacks();
     }

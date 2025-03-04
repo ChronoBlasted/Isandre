@@ -18,7 +18,7 @@ MonoBehaviour:
   distanceMinMaxSpawn: {x: 12, y: 16}
   spawnEnemyDelay: 1
   waveDelay: 15
-  waveDuration: 7.5
-  spawnEnemyDelayOnWave: 0.03
+  waveDuration: 4
+  spawnEnemyDelayOnWave: 0.15
   difficultyIncreaseDelay: 22.5
   lifeIncrease: 1000
