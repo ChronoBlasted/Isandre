@@ -19,10 +19,19 @@ public class Enemy : MonoBehaviour
 
     [Header("StateMachine")]
     public FiniteStateMachine<Enemy> _stateMachine;
+    public bool isDie;
+
     #endregion
+    [Header("Die")]
+    public Vector2 addForceOnDieMinMax;
+    public Vector2 addForceUpOnDieMinMax;
+    public Vector2 addTorqueOnDieMinMax;
     
     private void Update()
     {
+        if (isDie)
+            return;
+
         faceToPlayer();
         _stateMachine.Update();
     }
@@ -80,13 +89,24 @@ public class Enemy : MonoBehaviour
 
         //PoolManager 
 
-/*        int i = new int();
-        i = UnityEngine.Random.Range(0, 100);
-        if(i > chance)
-            Instantiate(exp, transform.position, transform.rotation );              
-        else
-            Instantiate(life, transform.position, transform.rotation );*/
+        /*        int i = new int();
+                i = UnityEngine.Random.Range(0, 100);
+                if(i > chance)
+                    Instantiate(exp, transform.position, transform.rotation );              
+                else
+                    Instantiate(life, transform.position, transform.rotation );*/
+        isDie = true;
+        Destroy(animator);
+        Destroy(animatorVisual);
 
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.None;
+        rb.linearVelocity = Vector3.zero;
+        rb.AddForce(-transform.forward *  Random.Range(addForceOnDieMinMax.x, addForceOnDieMinMax.y),ForceMode.Force);
+        rb.AddForce(transform.up *  Random.Range(addForceUpOnDieMinMax.x, addForceUpOnDieMinMax.y),ForceMode.Force);
+        rb.AddTorque(transform.right *  Random.Range(addTorqueOnDieMinMax.x, addTorqueOnDieMinMax.y),ForceMode.Force);
+
+        //Destroy(_owner.gameObject.GetComponent<Enemy>());
         PlayerManager.Instance.PlayerLeveling.GainXP(enemyData.xpGain);
         //Destroy(gameObject);
 

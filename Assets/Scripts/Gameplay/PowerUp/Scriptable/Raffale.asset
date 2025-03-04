@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: 
   rarity: 0
   burstCount: 2
-  timeBetweenShots: 0.1
+  timeBetweenShots: 0.03

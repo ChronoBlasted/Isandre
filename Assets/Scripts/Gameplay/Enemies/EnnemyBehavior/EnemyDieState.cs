@@ -6,7 +6,6 @@ public class EnemyDieState : State<Enemy>
     public override void Enter()
     {
         _owner.animator.SetTrigger("Die");
-        
     }
 
     public override void Exit()

@@ -51,7 +51,7 @@ public class Alive : MonoBehaviour
 
         if (currentLife <= 0)
         {
-            dieEvent.Invoke();
+            Die();
             return;
         }
     }
@@ -91,8 +91,8 @@ public class Alive : MonoBehaviour
 
     public void Die()
     {
-        dieFeedbacks.PlayFeedbacks();
         dieEvent.Invoke();
+        dieFeedbacks.PlayFeedbacks();
     }
 
 }

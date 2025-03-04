@@ -8,7 +8,6 @@ public class EnemyMoveState : State<Enemy>
             _owner.AnimationChange("Walk");
         else
             _owner.ChangeStateToAttack();
-
     }
 
     public override void Exit()
@@ -23,10 +22,11 @@ public class EnemyMoveState : State<Enemy>
     public override void Update()
     {
         //PoolManager.Instance[ResourceType.Player].Get();
-        
+
         //PoolManager.Instance[ResourceType.None].Release(gameObject);
 
-
+        if (_owner.isDie)
+            return;
 
         if ((_owner.target.position - _owner.transform.position).magnitude <= _owner.enemyData.enemyRange)
         {

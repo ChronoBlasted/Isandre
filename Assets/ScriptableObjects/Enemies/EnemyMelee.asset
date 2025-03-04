@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: CAC
   enemyRange: 1
-  enemyLife: 20
+  enemyLife: 40
   ennemyspeed: 2
   AttackTime: 1
   Projectile: {fileID: 0}
+  xpGain: 10

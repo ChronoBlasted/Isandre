@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlayerLeveling : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerLeveling : MonoBehaviour
 
     [SerializeField] GameObject levelUpChest;
     [SerializeField] Vector2 radiusMinMaxSpawnChest;
+    [SerializeField] LayerMask layer;
 
 
     public void GainXP(int amount)
@@ -27,7 +29,6 @@ public class PlayerLeveling : MonoBehaviour
         xpToLevelUp *= 2;
 
 
-
         //Spawn chest
         bool validSpawn = false;
         Vector3 spawnPosition = Vector3.zero;
@@ -37,11 +38,11 @@ public class PlayerLeveling : MonoBehaviour
             float angle = Random.Range(0f, 360f);
             float distance = Random.Range(radiusMinMaxSpawnChest.x, radiusMinMaxSpawnChest.y);
 
-            spawnPosition = PlayerManager.Instance.transform.position + new Vector3(Mathf.Cos(angle) * distance, 0, Mathf.Sin(angle) * distance);
+            spawnPosition = transform.position + new Vector3(Mathf.Cos(angle) * distance, 0, Mathf.Sin(angle) * distance);
 
-            Vector3 playerPosition = PlayerManager.Instance.transform.position;
-            if (!Physics.Raycast(playerPosition, (spawnPosition - playerPosition).normalized, distance,LayerMask.NameToLayer("Wall")))
+            if (!Physics.Raycast(transform.position + Vector3.up * .5f, (spawnPosition - transform.position).normalized, Vector3.Distance(transform.position, spawnPosition), layer))
             {
+                print("cdhohirgov");
                 validSpawn = true;
                 break;
             }
@@ -53,8 +54,19 @@ public class PlayerLeveling : MonoBehaviour
         }
         else
         {
-            Instantiate(levelUpChest, PlayerManager.Instance.transform.position, Quaternion.identity);
+            Instantiate(levelUpChest, transform.position, Quaternion.identity);
         }
 
     }
+
+#if UNITY_EDITOR
+    private void Update()
+    {
+            Debug.DrawRay(transform.position, transform.forward * 15, Color.red,.1f);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LevelUp();
+        }
+    }
+#endif
 }
