@@ -15,5 +15,5 @@ MonoBehaviour:
   title: Raffale
   Description: 
   rarity: 2
-  burstCount: 7
-  timeBetweenShots: 0.4
+  burstCount: 5
+  timeBetweenShots: 0.1
