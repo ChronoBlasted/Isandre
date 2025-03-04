@@ -26,7 +26,7 @@ public class PlayerLeveling : MonoBehaviour
     {
         currentXP = 0;
         playerLevel++;
-        xpToLevelUp *= 2;
+        xpToLevelUp = (int)(1.25f * xpToLevelUp);
 
 
         //Spawn chest

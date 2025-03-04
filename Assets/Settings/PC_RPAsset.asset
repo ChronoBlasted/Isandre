@@ -43,11 +43,11 @@ MonoBehaviour:
   m_ProbeVolumeSHBands: 1
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
-  m_MainLightShadowmapResolution: 512
+  m_MainLightShadowmapResolution: 1024
   m_AdditionalLightsRenderingMode: 1
   m_AdditionalLightsPerObjectLimit: 1
   m_AdditionalLightShadowsSupported: 1
-  m_AdditionalLightsShadowmapResolution: 512
+  m_AdditionalLightsShadowmapResolution: 1024
   m_AdditionalLightsShadowResolutionTierLow: 256
   m_AdditionalLightsShadowResolutionTierMedium: 512
   m_AdditionalLightsShadowResolutionTierHigh: 1024
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_UseFastSRGBLinearConversion: 0
   m_SupportDataDrivenLensFlare: 1
   m_SupportScreenSpaceLensFlare: 1
-  m_GPUResidentDrawerMode: 1
+  m_GPUResidentDrawerMode: 0
   m_SmallMeshScreenPercentage: 0
   m_GPUResidentDrawerEnableOcclusionCullingInCameras: 0
   m_ShadowType: 1
