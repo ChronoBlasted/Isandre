@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour
         }
 
         Invoke("HandleHit", 5f);
+        Destroy(gameObject, 4);
     }
 
     private void Update()
