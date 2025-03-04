@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Tire Rate +++
   Description: M@CHINE GUN ?!!
+  rarity: 2
   attackRateMultiplier: 1.6

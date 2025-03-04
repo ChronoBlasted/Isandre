@@ -26,22 +26,35 @@ public class PlayerLeveling : MonoBehaviour
         playerLevel++;
         xpToLevelUp *= 2;
 
-/*        GameObject chest = Instantiate(levelUpChest);
-        chest.transform.position = new Vector3(
-            PlayerManager.Instance.transform.position.x + Random.Range(radiusMinMaxSpawnChest.x, radiusMinMaxSpawnChest.y),
-            .1f,
-            PlayerManager.Instance.transform.position.z + Random.Range(radiusMinMaxSpawnChest.x, radiusMinMaxSpawnChest.y));
 
-*/
-        float angle = Random.Range(0f, 360f);
-        // Générer une distance aléatoire entre min et max
-        float distance = Random.Range(radiusMinMaxSpawnChest.x, radiusMinMaxSpawnChest.y);
 
-        // Calculer la position de spawn
-        Vector3 spawnPosition = PlayerManager.Instance.transform.position + new Vector3(Mathf.Cos(angle) * distance, 0, Mathf.Sin(angle) * distance);
+        //Spawn chest
+        bool validSpawn = false;
+        Vector3 spawnPosition = Vector3.zero;
 
-        // Instancier l'objet
-        Instantiate(levelUpChest, spawnPosition, Quaternion.identity);
+        for (int i = 0; i < 50; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            float distance = Random.Range(radiusMinMaxSpawnChest.x, radiusMinMaxSpawnChest.y);
+
+            spawnPosition = PlayerManager.Instance.transform.position + new Vector3(Mathf.Cos(angle) * distance, 0, Mathf.Sin(angle) * distance);
+
+            Vector3 playerPosition = PlayerManager.Instance.transform.position;
+            if (!Physics.Raycast(playerPosition, (spawnPosition - playerPosition).normalized, distance,LayerMask.NameToLayer("Wall")))
+            {
+                validSpawn = true;
+                break;
+            }
+        }
+
+        if (validSpawn)
+        {
+            Instantiate(levelUpChest, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(levelUpChest, PlayerManager.Instance.transform.position, Quaternion.identity);
+        }
 
     }
 }
