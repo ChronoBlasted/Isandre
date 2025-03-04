@@ -35,6 +35,14 @@ public class MultiShotDecorator : IAttackBehaviour
         }
         firePoint.rotation = originalRotation;
     }
+
+    public void Upgrade(params object[] args)
+    {
+        if (args.Length > 0)
+            numberOfShots += (int)args[0];
+        if (args.Length > 1)
+            angleSpread += (float)args[1];
+    }
 }
 
 public class BurstFireDecorator : IAttackBehaviour
@@ -76,5 +84,11 @@ public class BurstFireDecorator : IAttackBehaviour
             decoratedBehaviour.Attack(weapon);
             yield return new WaitForSeconds(timeBetweenShots);
         }
+    }
+
+    public void Upgrade(params object[] args)
+    {
+        if (args.Length > 0)
+            burstCount = (int)args[0];        
     }
 }

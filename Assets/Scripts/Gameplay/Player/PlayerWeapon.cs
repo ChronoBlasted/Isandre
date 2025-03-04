@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static PlayerAnimation;
@@ -90,7 +91,11 @@ public class PlayerWeapon : MonoBehaviour
         currentWeapon.transform.SetLocalPositionAndRotation(Vector3.zero, weaponHolder.rotation);
     }
 
-    public void AddDecorator<T>(params object[] args) where T : IAttackBehaviour
+    /// <summary>
+    /// Ajoute ou met à jour un décorateur pour le comportement d'attaque de l'arme.
+    /// Si un décorateur du même type existe déjà dans la chaîne, sa méthode Upgrade est appelée.
+    /// </summary>
+    public void AddDecorator<T>(params object[] args) where T : class, IAttackBehaviour
     {
         if (currentWeapon == null)
         {
@@ -98,17 +103,56 @@ public class PlayerWeapon : MonoBehaviour
             return;
         }
 
-        // Préparez la liste des arguments à passer au constructeur du décorateur.
-        // Le premier argument doit être le comportement actuel de l'arme.
-        List<object> argList = new List<object>();
-        argList.Add(currentWeapon.attackBehaviour);
-        if (args != null && args.Length > 0)
+        // Recherche dans la chaîne de comportements si un décorateur de type T existe déjà
+        T existingDecorator = FindDecorator<T>(currentWeapon.attackBehaviour);
+        if (existingDecorator != null)
         {
-            argList.AddRange(args);
+            // Utilisation de la réflexion pour appeler la méthode "Upgrade" sur le décorateur existant
+            MethodInfo upgradeMethod = existingDecorator.GetType().GetMethod("Upgrade", BindingFlags.Public | BindingFlags.Instance);
+            if (upgradeMethod != null)
+            {
+                // La méthode Upgrade attend un seul paramètre : un tableau d'objets
+                upgradeMethod.Invoke(existingDecorator, new object[] { args });
+                Debug.Log("Décorateur " + typeof(T).Name + " mis à jour.");
+            }
+            else
+            {
+                Debug.LogWarning("Le décorateur existant n'a pas de méthode Upgrade.");
+            }
+            return;
         }
+        else
+        {
+            // Aucun décorateur du même type n'a été trouvé, on en ajoute un nouveau
+            List<object> argList = new List<object>();
+            // Le premier argument est le comportement actuel à décorer
+            argList.Add(currentWeapon.attackBehaviour);
+            if (args != null && args.Length > 0)
+                argList.AddRange(args);
+            currentWeapon.attackBehaviour = (T)Activator.CreateInstance(typeof(T), argList.ToArray());
+            Debug.Log("Nouveau décorateur ajouté : " + typeof(T).Name);
+        }
+    }
 
-        // Créez une instance du décorateur T avec le comportement actuel en premier paramètre.
-        currentWeapon.attackBehaviour = (T)System.Activator.CreateInstance(typeof(T), argList.ToArray());
+    /// <summary>
+    /// Recherche récursive d'un décorateur de type T dans la chaîne de comportements.
+    /// </summary>
+    private T FindDecorator<T>(IAttackBehaviour behaviour) where T : class, IAttackBehaviour
+    {
+        if (behaviour is T t)
+            return t;
+
+        // Recherche dans le champ privé "decoratedBehaviour" si présent
+        FieldInfo field = behaviour.GetType().GetField("decoratedBehaviour", BindingFlags.NonPublic | BindingFlags.Instance);
+        if (field != null)
+        {
+            object inner = field.GetValue(behaviour);
+            if (inner is IAttackBehaviour innerBehaviour)
+            {
+                return FindDecorator<T>(innerBehaviour);
+            }
+        }
+        return null;
     }
 
     /// <summary>

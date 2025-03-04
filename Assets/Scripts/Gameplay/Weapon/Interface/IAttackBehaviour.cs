@@ -3,6 +3,8 @@ using UnityEngine;
 public interface IAttackBehaviour
 {
     void Attack(Weapon weapon);
+
+    public void Upgrade(params object[] args);
 }
 
 public interface IProjectileBehaviour

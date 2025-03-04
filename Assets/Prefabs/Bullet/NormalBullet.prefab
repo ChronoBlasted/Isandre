@@ -37,10 +37,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6732748712555525815, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
-      propertyPath: boxColl
-      value: 
-      objectReference: {fileID: 2688812673396738415}
-    - target: {fileID: 6732748712555525815, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
       propertyPath: layer.m_Bits
       value: 65536
       objectReference: {fileID: 0}
@@ -100,37 +96,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1847587350741077895, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2688812673396738415}
+      addedObject: {fileID: 8684673988797244690}
     - targetCorrespondingSourceObject: {fileID: 1847587350741077895, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8684673988797244690}
+      addedObject: {fileID: 4843305904247028901}
   m_SourcePrefab: {fileID: 100100000, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
 --- !u!1 &463923398377968615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1847587350741077895, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}
   m_PrefabInstance: {fileID: 2293419865284992096}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2688812673396738415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463923398377968615}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 33792
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.2, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8684673988797244690
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,6 +133,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
+--- !u!136 &4843305904247028901
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463923398377968615}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 2304
+  m_LayerOverridePriority: 10
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Height: 0.57
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1050497609371344322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1245178458365690274, guid: aa63f0327b2ea51418ac91e9dea08c42, type: 3}

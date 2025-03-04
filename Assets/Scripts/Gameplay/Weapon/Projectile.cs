@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour
 
     public void Init(int damage)
     {
+        CancelInvoke("HandleHit");
+
         this.damage = (damage == 0 ? projectileData.damage : damage);
         lastHitEnemy = null;
         trailRenderer.Clear();
@@ -35,6 +37,8 @@ public class Projectile : MonoBehaviour
                 projectileBehaviour = decoratorFunc(projectileBehaviour);
             }
         }
+
+        Invoke("HandleHit", 5f);
     }
 
     private void Update()
@@ -73,17 +77,18 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!gameObject.activeSelf) return;
-
-        vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
-        ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
-        vfx.transform.position = transform.position;
-        particleSystem.Play();
-
-        Destroy(vfx, 2f);
-
-        if (other.gameObject.layer == 16)
+        //Debug.Log(other.gameObject.name + " : " + other.gameObject.layer);
+        //Debug.Log(layer.);
+        if ((layer.value & (1 << other.gameObject.layer)) != 0)
         {
             lastHitEnemy = other.gameObject;
+            vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
+            ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
+            vfx.transform.position = transform.position;
+            particleSystem.Play();
+
+            Destroy(vfx, 2f);
+
             if (other.gameObject.TryGetComponent(out Alive _alive))
             {
                 Debug.Log("Collision avec enemy ou player");
@@ -95,7 +100,14 @@ public class Projectile : MonoBehaviour
 
         if (other.gameObject.layer == 9)
         {
-            Debug.Log("Collision avec un mur");
+            vfx = PoolManager.Instance[ResourceType.BulletImpact].Get();
+            ParticleSystem particleSystem = vfx.GetComponent<ParticleSystem>();
+            vfx.transform.position = transform.position;
+            particleSystem.Play();
+
+            Destroy(vfx, 2f);
+
+            //Debug.Log("Collision avec un mur");
             HandleHit();
             return;
         }
@@ -121,5 +133,11 @@ public class Projectile : MonoBehaviour
     {
         PoolManager.Instance[projectileData.type].Release(gameObject);
         //PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
+    }
+
+    public void ReleaseVFX()
+    {
+        //PoolManager.Instance[projectileData.type].Release(gameObject);
+        PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
     }
 }

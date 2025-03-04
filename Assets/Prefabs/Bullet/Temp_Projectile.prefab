@@ -99,12 +99,12 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 33280
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1280
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -155,4 +155,5 @@ MonoBehaviour:
     m_Bits: 32768
   trailRenderer: {fileID: 0}
   ps: {fileID: 0}
+  lastHitEnemy: {fileID: 0}
   damage: 3
