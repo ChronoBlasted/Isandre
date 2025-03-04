@@ -9,7 +9,7 @@ public enum RarityEnum
 
 public static class RarityColor
 {
-    public static Color Commun = new Color(168, 213, 186);
-    public static Color Rare = new Color(163, 199, 230);
-    public static Color Epic = new Color(196, 163, 230);
+    public static Color Common = new Color(1f, 1f, 1f); // Blanc
+    public static Color Rare = new Color(0.4f, 0.6f, 1f); // Bleu pastel
+    public static Color Epic = new Color(0.7f, 0.4f, 1f); // Violet pastel
 }

@@ -31,7 +31,7 @@ public class PowerUpCardUI : MonoBehaviour
         switch(CurrentPowerUp.rarity)
         {
             case RarityEnum.Common:
-                panelBackground.color = RarityColor.Commun;
+                panelBackground.color = RarityColor.Common;
                 break;
             case RarityEnum.Rare:
                 panelBackground.color = RarityColor.Rare;
