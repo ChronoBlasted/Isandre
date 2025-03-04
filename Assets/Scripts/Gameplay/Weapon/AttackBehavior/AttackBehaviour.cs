@@ -6,4 +6,9 @@ public abstract class AttackBehaviour : IAttackBehaviour
     {
 
     }
+
+    public void Upgrade(params object[] args)
+    {
+        
+    }
 }

@@ -17,4 +17,4 @@ MonoBehaviour:
   rarity: 2
   explosionRadius: 7
   explosionDamage: 10
-  explosionForce: 10
+  explosionForce: 6

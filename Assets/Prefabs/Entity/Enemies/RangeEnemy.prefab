@@ -89,6 +89,14 @@ PrefabInstance:
       propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2038950446518765327, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2038950446518765327, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 3322667732902325045, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: m_Controller
       value: 
