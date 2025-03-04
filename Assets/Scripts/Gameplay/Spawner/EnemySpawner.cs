@@ -8,12 +8,24 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
     private float currentTime;
     private float currentDifficultyTime;
-    private List<Enemy> enemyInstantiate;
+    private float currentWaveTime;
+    private float currentOnWaveTime;
+
+    float spawnEnemyDelay;
+
+    private List<Enemy> enemyInstantiate = new();
 
     private int lifeIncrease;
+
+    private void Start()
+    {
+        data = Instantiate(data);
+        spawnEnemyDelay = data.spawnEnemyDelay;
+
+    }
     private void Update()
     {
-        if (currentTime >= data.spawnEnemyDelay)
+        if (currentTime >= data.spawnEnemyDelay && enemyInstantiate.Count < data.maxEnemy)
         {
             currentTime = 0;
             SpawnEnemy();
@@ -25,8 +37,26 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             lifeIncrease += data.lifeIncrease;
         }
 
+        if (currentWaveTime >= data.waveDelay)
+        {
+            if (currentOnWaveTime == 0)
+            {
+                data.spawnEnemyDelay = data.spawnEnemyDelayOnWave;
+            }
+
+            if (currentOnWaveTime >= data.waveDuration)
+            {
+                currentWaveTime = 0;
+                currentOnWaveTime = 0;
+
+                data.spawnEnemyDelay = spawnEnemyDelay;
+            }
+            currentOnWaveTime += Time.deltaTime;
+        }
+
         currentTime += Time.deltaTime;
         currentDifficultyTime += Time.deltaTime;
+        currentWaveTime += Time.deltaTime;
     }
 
     private void SpawnEnemy()

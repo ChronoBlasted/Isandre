@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa8ebbef866f044194af95c5c09f44f, type: 3}
   m_Name: EnemySpawnerData
   m_EditorClassIdentifier: 
-  maxEnemy: 30
+  maxEnemy: 90
   enemies:
   - {fileID: 4716609242788792251, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
-  distanceMinMaxSpawn: {x: 15, y: 20}
-  spawnEnemyDelay: 3
-  difficultyIncreaseDelay: 30
-  lifeIncrease: 20
+  distanceMinMaxSpawn: {x: 12, y: 16}
+  spawnEnemyDelay: 1
+  waveDelay: 15
+  waveDuration: 7.5
+  spawnEnemyDelayOnWave: 0.03
+  difficultyIncreaseDelay: 22.5
+  lifeIncrease: 150
