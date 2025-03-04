@@ -111,6 +111,7 @@ Organisation en dossiers pour faciliter la navigation dans **Unity** :
 - **Singleton** → Gestionnaires globaux *(GameManager, UI Manager...)*  
 - **State Machine** → IA des ennemis  
 - **Component** → Système d’armes modulaire  
+- <font color="blue">**Decorator** → Système de buff et de modification de nos tirs</font> 
 
 ### 🔤 Conventions de nommage  
 - **Classes** : `PascalCase` → `WeaponManager`  
