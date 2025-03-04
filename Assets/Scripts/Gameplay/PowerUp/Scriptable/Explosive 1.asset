@@ -15,6 +15,6 @@ MonoBehaviour:
   title: Explosive
   Description: 
   rarity: 1
-  explosionRadius: 3
+  explosionRadius: 0.5
   explosionDamage: 7
-  explosionForce: 4
+  explosionForce: 0.5
