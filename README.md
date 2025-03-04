@@ -135,11 +135,11 @@ Organisation en dossiers pour faciliter la navigation dans **Unity** :
 
 ### Ajout de code 
 - Creation de decorators :
-     creer un nouveau script qui prend en parent ProjectileDecorator,
-     Ajouter les fonctions constructeur et OnHit()
-     Prendre exemple sur ExplosiveProjectileDecorator pour la nomenclature
-     Creer un SO PowerUp, qui va ajouter le decorator
-     ex : PlayerManager.Instance.playerWeapon.RegisterBulletDecorator<ExplosiveProjectileDecorator>(explosionRadius, explosionDamage, explosionForce);
+     - creer un nouveau script qui prend en parent ProjectileDecorator,
+     - Ajouter les fonctions constructeur et OnHit()
+     - Prendre exemple sur ExplosiveProjectileDecorator pour la nomenclature
+     - Creer un SO PowerUp, qui va ajouter le decorator
+     - ex : PlayerManager.Instance.playerWeapon.RegisterBulletDecorator<ExplosiveProjectileDecorator>(explosionRadius, explosionDamage, explosionForce);
   
 
 ## 5️⃣ Tools, Tests & CI/CD  
