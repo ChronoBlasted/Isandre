@@ -44,6 +44,8 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
                 data.spawnEnemyDelay = data.spawnEnemyDelayOnWave;
             }
 
+            currentOnWaveTime += Time.deltaTime;
+            
             if (currentOnWaveTime >= data.waveDuration)
             {
                 currentWaveTime = 0;
@@ -51,7 +53,6 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
                 data.spawnEnemyDelay = spawnEnemyDelay;
             }
-            currentOnWaveTime += Time.deltaTime;
         }
 
         currentTime += Time.deltaTime;

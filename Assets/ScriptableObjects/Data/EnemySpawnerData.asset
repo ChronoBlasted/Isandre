@@ -16,7 +16,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 4716609242788792251, guid: e1959e1868589f34ea78b75736f050c2, type: 3}
   distanceMinMaxSpawn: {x: 12, y: 16}
-  spawnEnemyDelay: 1
+  spawnEnemyDelay: 2
   waveDelay: 15
   waveDuration: 7.5
   spawnEnemyDelayOnWave: 0.03
