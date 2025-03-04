@@ -18,3 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8f6d0424b396ce4283c703400e7a0db, type: 2}
   epicPowerUp:
   - {fileID: 11400000, guid: b7d126fff31518b4295a6430bc13ce61, type: 2}
+  timeToOpen: 0.6

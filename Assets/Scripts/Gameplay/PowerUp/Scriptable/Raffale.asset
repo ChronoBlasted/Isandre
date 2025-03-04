@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 38fbbe00a8120f04083aec81d3da810d, type: 3}
   m_Name: Raffale
   m_EditorClassIdentifier: Scripts::Raffale
-  title: Raffale
+  title: 
   Description: 
   rarity: 0
-  burstCount: 2
-  timeBetweenShots: 0.5
+  attackRateMultiplier: 0
