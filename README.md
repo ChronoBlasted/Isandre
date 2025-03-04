@@ -137,9 +137,56 @@ Organisation en dossiers pour faciliter la navigation dans **Unity** :
 - Creation de decorators :
      - creer un nouveau script qui prend en parent ProjectileDecorator,
      - Ajouter les fonctions constructeur et OnHit()
+       ```csharp
+       public class ExplosiveProjectileDecorator : ProjectileDecorator
+         {
+             public float explosionRadius;
+             public float explosionDamage;
+             public float explosionForce;    // Force de recul appliquée aux ennemis
+             public GameObject explosionVFX; // Prefab du VFX à instancier lors de l'explosion
+         
+             // Le constructeur doit prendre en premier le comportement de base, puis les paramètres.
+             public ExplosiveProjectileDecorator(IProjectileBehaviour decoratedBehaviour, float explosionRadius, float explosionDamage, float explosionForce)
+                 : base(decoratedBehaviour)
+             {
+                 this.explosionRadius = explosionRadius;
+                 this.explosionDamage = explosionDamage;
+                 this.explosionForce = explosionForce;        
+             }
+         
+             public override void OnHit()
+             {
+                 // Essayer de récupérer le projectile depuis le comportement de base.
+                 BasicProjectileBehaviour baseBehaviour = decoratedBehaviour as BasicProjectileBehaviour;
+                
+                   //Do Something
+         
+                 // Enfin, appel du comportement de base (libération du projectile, etc.)
+                 base.OnHit();
+             }
+         }
+
+       ```
      - Prendre exemple sur ExplosiveProjectileDecorator pour la nomenclature
      - Creer un SO PowerUp, qui va ajouter le decorator
+       ```csharp
+          [CreateAssetMenu(fileName = "Scriptable Objects", menuName = "PowerUp/Explosive", order = 1)]
+         public class Explosive : PowerUp
+         {
+             [SerializeField] private float explosionRadius = 2f;
+             [SerializeField] private float explosionDamage = 5f;
+             [SerializeField] private float explosionForce = 5f;
+             public override void OnUse()
+             {
+                 base.OnUse();
+                 PlayerManager.Instance.playerWeapon.RegisterBulletDecorator<ExplosiveProjectileDecorator>(explosionRadius, explosionDamage, explosionForce);
+             }
+         }
+
+       ```
+       
      - ex : PlayerManager.Instance.playerWeapon.RegisterBulletDecorator<ExplosiveProjectileDecorator>(explosionRadius, explosionDamage, explosionForce);
+     - Ajouter le nouveau SO au SO ChestLvlUpData, pour qu'il puisse apparaitre en jeu
   
 
 ## 5️⃣ Tools, Tests & CI/CD  
