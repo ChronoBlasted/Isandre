@@ -20,9 +20,9 @@ public class ChestLevelUp : InteractableBehaviour
         base.OnInteract();
         List<PowerUp> newPowerUp = new()
         {
-            data.basicPowerUp[0],
-            data.rarePowerUp[0],
-            data.epicPowerUp[0],
+            data.basicPowerUp[Random.Range(0, data.basicPowerUp.Count)],
+            data.rarePowerUp[Random.Range(0, data.rarePowerUp.Count)],
+            data.epicPowerUp[Random.Range(0, data.epicPowerUp.Count)],
         };
         UIManager.Instance.LevelUpPopup.SetPowerUp(newPowerUp);
         UIManager.Instance.AddPopup(UIManager.Instance.LevelUpPopup);

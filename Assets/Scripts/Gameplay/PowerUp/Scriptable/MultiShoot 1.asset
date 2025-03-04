@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c20826d9fd122e4481661953eda1d8c, type: 3}
-  m_Name: MultiShoot
+  m_Name: MultiShoot 1
   m_EditorClassIdentifier: 
   title: Multishoot
   Description: 
-  rarity: 0
-  numberOfShots: 2
-  angleSpread: 5
+  rarity: 1
+  numberOfShots: 3
+  angleSpread: 7

@@ -24,6 +24,7 @@ public class PlayerLeveling : MonoBehaviour
     {
         currentXP = 0;
         playerLevel++;
+        xpToLevelUp *= 2;
 
 /*        GameObject chest = Instantiate(levelUpChest);
         chest.transform.position = new Vector3(

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c20826d9fd122e4481661953eda1d8c, type: 3}
-  m_Name: MultiShoot
+  m_Script: {fileID: 11500000, guid: 8f81982358a72e442b382e4c4a0f2506, type: 3}
+  m_Name: Piercing 1
   m_EditorClassIdentifier: 
-  title: Multishoot
+  title: Piercing
   Description: 
-  rarity: 0
-  numberOfShots: 2
-  angleSpread: 5
+  rarity: 1
+  pierceCount: 3

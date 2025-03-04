@@ -7,6 +7,6 @@ public class PowerUp : ScriptableObject
     public RarityEnum rarity;
     public virtual void OnUse()
     {
-
+        Debug.Log(title);
     }
 }

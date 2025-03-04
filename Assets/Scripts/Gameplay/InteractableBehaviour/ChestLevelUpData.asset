@@ -13,8 +13,23 @@ MonoBehaviour:
   m_Name: ChestLevelUpData
   m_EditorClassIdentifier: 
   basicPowerUp:
-  - {fileID: 11400000, guid: 8af46b41aec94b7409711d2b70a25163, type: 2}
+  - {fileID: 11400000, guid: 4e311a32ae0132d4aabaaac2f08b7306, type: 2}
+  - {fileID: 11400000, guid: ef7f9e39b87f7ef4bad136ca5ecefe97, type: 2}
+  - {fileID: 11400000, guid: c9fce969413914a4a84ac34f528d87d6, type: 2}
+  - {fileID: 11400000, guid: 040400482894c4c489bce704cffe2822, type: 2}
+  - {fileID: 11400000, guid: b845a199f2c25604f90a4f1646fb18c1, type: 2}
+  - {fileID: 11400000, guid: 6c6ee54e333bc38458e0089a376136ba, type: 2}
   rarePowerUp:
+  - {fileID: 11400000, guid: 4b7c2660dd412764abc598403c1274f5, type: 2}
+  - {fileID: 11400000, guid: e0bdd9e87640b5c45836b757a7966b00, type: 2}
+  - {fileID: 11400000, guid: 9ca144494a5459d4d9ce7cc44cdcceb6, type: 2}
+  - {fileID: 11400000, guid: db250ac58bb9f4b4d82bb54c570f8f87, type: 2}
+  - {fileID: 11400000, guid: 63b2b691b2cb361438dc7a5e4b7fa303, type: 2}
   - {fileID: 11400000, guid: e8f6d0424b396ce4283c703400e7a0db, type: 2}
   epicPowerUp:
+  - {fileID: 11400000, guid: 2489a66a7c744f2458543fc4e11a3be9, type: 2}
+  - {fileID: 11400000, guid: a689fa64fcbcdc348aa6c873c2a9640a, type: 2}
+  - {fileID: 11400000, guid: 6dd6e6a6628491c418b5631ffa34c6a2, type: 2}
+  - {fileID: 11400000, guid: 5cca5cede8e5e6947bd7af7399304639, type: 2}
+  - {fileID: 11400000, guid: e7233b12f86223c4e81dec60e3f2cb4b, type: 2}
   - {fileID: 11400000, guid: b7d126fff31518b4295a6430bc13ce61, type: 2}
