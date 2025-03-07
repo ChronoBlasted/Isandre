@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        if (timeSinceLastAttack >= (1f / weaponData.attackRate))
+        if (timeSinceLastAttack > (1f / weaponData.attackRate))
         {
             attackBehaviour.Attack(this);
 

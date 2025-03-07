@@ -59,7 +59,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448646842097688198, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 448646842097688198, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

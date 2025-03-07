@@ -97,6 +97,7 @@ public class Alive : MonoBehaviour
     {
         isDie = true;
         dieEvent.Invoke();
+        if (dieFeedbacks != null) dieFeedbacks.PlayFeedbacks();
     }
 
 }
