@@ -14794,20 +14794,8 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
-      propertyPath: Add
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
-      propertyPath: data
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
       propertyPath: maxLife
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
-      propertyPath: Subtract
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
       propertyPath: currentLife
@@ -14820,7 +14808,7 @@ PrefabInstance:
     - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2089848153}
+      objectReference: {fileID: 1876445567}
     - target: {fileID: 4165454036510305996, guid: 46772909a010b594690a5b4626ead8b0, type: 3}
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -15722,6 +15710,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7875588161809685789, guid: 83a393c6b1e20dd45b8843584807fa17, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d0407f652af69784c881fda3e4e2a4c7, type: 2}
     - target: {fileID: 9184689117097601539, guid: 83a393c6b1e20dd45b8843584807fa17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

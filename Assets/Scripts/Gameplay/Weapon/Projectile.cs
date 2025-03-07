@@ -92,7 +92,6 @@ public class Projectile : MonoBehaviour
 
             if (other.gameObject.TryGetComponent(out Alive _alive))
             {
-                Debug.Log("Collision avec enemy ou player");
                 _alive.ChangeLife(-damage);
             }
             HandleHit();

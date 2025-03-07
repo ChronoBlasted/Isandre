@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Component")]
     public Alive hpScript;
-    public Animator animator, animatorVisual ;
+    public Animator animator;
     public CollectableSpawner Spawner;
     public GameObject exp, life;
     public int chance;
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     public Vector2 addForceOnDieMinMax;
     public Vector2 addForceUpOnDieMinMax;
     public Vector2 addTorqueOnDieMinMax;
-    
+
     private void Update()
     {
         if (isDie)
@@ -52,11 +52,6 @@ public class Enemy : MonoBehaviour
             //hpScript.dieEvent.AddListener(Die);
             //hpScript.hitEvent.AddListener(Hitted);
         }
-        #endregion
-
-        #region GetAnimator
-        if (animator == null && TryGetComponent(out Animator _Animator))
-            animator = _Animator;
         #endregion
 
         #region StateMachine
@@ -97,14 +92,13 @@ public class Enemy : MonoBehaviour
                     Instantiate(life, transform.position, transform.rotation );*/
         isDie = true;
         Destroy(animator);
-        Destroy(animatorVisual);
 
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.None;
         rb.linearVelocity = Vector3.zero;
-        rb.AddForce(-transform.forward *  Random.Range(addForceOnDieMinMax.x, addForceOnDieMinMax.y),ForceMode.Force);
-        rb.AddForce(transform.up *  Random.Range(addForceUpOnDieMinMax.x, addForceUpOnDieMinMax.y),ForceMode.Force);
-        rb.AddTorque(transform.right *  Random.Range(addTorqueOnDieMinMax.x, addTorqueOnDieMinMax.y),ForceMode.Force);
+        rb.AddForce(-transform.forward * Random.Range(addForceOnDieMinMax.x, addForceOnDieMinMax.y), ForceMode.Force);
+        rb.AddForce(transform.up * Random.Range(addForceUpOnDieMinMax.x, addForceUpOnDieMinMax.y), ForceMode.Force);
+        rb.AddTorque(transform.right * Random.Range(addTorqueOnDieMinMax.x, addTorqueOnDieMinMax.y), ForceMode.Force);
 
         //Destroy(_owner.gameObject.GetComponent<Enemy>());
         PlayerManager.Instance.PlayerLeveling.GainXP(enemyData.xpGain);
@@ -113,27 +107,29 @@ public class Enemy : MonoBehaviour
     }
 
     #region StateMachine
-    public void ChangeStateToHit(){
+    public void ChangeStateToHit()
+    {
         _stateMachine.SetState<EnemyHitState>();
     }
-    
+
     public void ChangeStateToAttack()
-    {            
-        _stateMachine.SetState<EnemyAttackState>();    
+    {
+        _stateMachine.SetState<EnemyAttackState>();
     }
-    
-    public void changeStateToMove(){
-        _stateMachine.SetState<EnemyMoveState>();    
+
+    public void changeStateToMove()
+    {
+        _stateMachine.SetState<EnemyMoveState>();
     }
-    
-    public void changeStateToDie(){
-        _stateMachine.SetState<EnemyDieState>();    
+
+    public void changeStateToDie()
+    {
+        _stateMachine.SetState<EnemyDieState>();
     }
 
     public void AnimationChange(string _animTrigger)
     {
         animator.SetTrigger(_animTrigger);
-        animatorVisual.SetTrigger(_animTrigger);
     }
     #endregion
 
