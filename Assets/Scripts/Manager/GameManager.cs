@@ -73,6 +73,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void HandleEnd()
     {
+        ReloadScene();
     }
 
     void HandleWait()
