@@ -42,7 +42,6 @@ public class PlayerLeveling : MonoBehaviour
 
             if (!Physics.Raycast(transform.position + Vector3.up * .5f, (spawnPosition - transform.position).normalized, Vector3.Distance(transform.position, spawnPosition), layer))
             {
-                print("cdhohirgov");
                 validSpawn = true;
                 break;
             }

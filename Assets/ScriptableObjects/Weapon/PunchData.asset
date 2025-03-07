@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7522d3595cdbe4a91755b6f0e431b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ca8b6b878cb32d4fa0bc31a022e8c3a, type: 3}
   m_Name: PunchData
   m_EditorClassIdentifier: 
-  type: 202
-  name: BasicPistol
+  type: 206
+  name: Punch
   sprite: {fileID: 0}
-  prefab: {fileID: 1633766592178425325, guid: 2619297429cf48244b538298493042ea, type: 3}
+  prefab: {fileID: 1633766592178425325, guid: 381fd2a4e95c09a4e99b62472902652d, type: 3}
+  damage: 1
+  attackRate: 1
+  audioClipName: AttackDefault
+  range: 2

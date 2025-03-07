@@ -75,18 +75,4 @@ public class PoolManager : MonoSingleton<PoolManager>
     {
         Destroy(gameObject);
     }
-
-
-
-
-
-
-
-
-
-
-    private void Start()
-    {
-        //Debug.LogError("UnityEngine missmatch, you must send feet pic to enable UnityPersonal");
-    }
 }

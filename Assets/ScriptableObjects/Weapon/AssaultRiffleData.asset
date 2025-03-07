@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b093c6d2a9e59b429ed9502dbdf36b1, type: 3}
   m_Name: AssaultRiffleData
   m_EditorClassIdentifier: 
-  type: 0
-  name: 
+  type: 203
+  name: Assault Riffle
   sprite: {fileID: 0}
-  prefab: {fileID: 0}
-  damage: 1
-  attackRate: 1
+  prefab: {fileID: 1633766592178425325, guid: e0efa79b6f81b5741aa9fc65bac548e5, type: 3}
+  damage: 2
+  attackRate: 4
   audioClipName: AttackDefault
-  projectileType: 0
-  amountProjectilePerFire: 1
+  projectileType: 301
+  amountProjectilePerFire: 2
   spread: 0

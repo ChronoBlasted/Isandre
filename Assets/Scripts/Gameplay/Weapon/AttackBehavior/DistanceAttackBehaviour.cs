@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using static PlayerAnimation;
 
 public abstract class DistanceAttackBehaviour : AttackBehaviour
@@ -14,6 +14,7 @@ public abstract class DistanceAttackBehaviour : AttackBehaviour
         for (int i = 1; i <= data.amountProjectilePerFire; i++)
         {
             GameObject bullet = PoolManager.Instance[(ResourceType)data.projectileType].Get();
+
             bullet.layer = 15;
 
             Projectile projectile = bullet.GetComponent<Projectile>();

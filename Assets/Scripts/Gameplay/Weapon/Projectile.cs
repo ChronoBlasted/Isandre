@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -39,7 +40,6 @@ public class Projectile : MonoBehaviour
         }
 
         Invoke("HandleHit", 5f);
-        Destroy(gameObject, 4);
     }
 
     private void Update()
@@ -88,7 +88,7 @@ public class Projectile : MonoBehaviour
             vfx.transform.position = transform.position;
             particleSystem.Play();
 
-            Destroy(vfx, 2f);
+            ReleaseVFX(2);
 
             if (other.gameObject.TryGetComponent(out Alive _alive))
             {
@@ -105,13 +105,11 @@ public class Projectile : MonoBehaviour
             vfx.transform.position = transform.position;
             particleSystem.Play();
 
-            Destroy(vfx, 2f);
+            ReleaseVFX(2);
 
-            //Debug.Log("Collision avec un mur");
             HandleHit();
             return;
         }
-
     }
 
     private void HandleHit()
@@ -135,9 +133,15 @@ public class Projectile : MonoBehaviour
         //PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
     }
 
-    public void ReleaseVFX()
+    public void ReleaseVFX(float timeBeforeRelease)
     {
-        //PoolManager.Instance[projectileData.type].Release(gameObject);
+        StartCoroutine(ReleaseVFXCor(timeBeforeRelease));
+    }
+
+    IEnumerator ReleaseVFXCor(float timeBeforeRelease)
+    {
+        yield return new WaitForSeconds(timeBeforeRelease);
+
         PoolManager.Instance[ResourceType.BulletImpact].Release(vfx);
     }
 }

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b093c6d2a9e59b429ed9502dbdf36b1, type: 3}
   m_Name: ShotgunData
   m_EditorClassIdentifier: 
-  type: 0
-  name: 
+  type: 204
+  name: Shotgun
   sprite: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 1633766592178425325, guid: c5cce76227ef6be4da2eb11825d5f001, type: 3}
   damage: 1
-  attackRate: 1
+  attackRate: 2
   audioClipName: AttackDefault
-  projectileType: 0
-  amountProjectilePerFire: 1
-  spread: 0
+  projectileType: 301
+  amountProjectilePerFire: 5
+  spread: 20
