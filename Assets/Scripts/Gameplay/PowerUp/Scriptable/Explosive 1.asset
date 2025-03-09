@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Explosive 1
   m_EditorClassIdentifier: Scripts::Explosive
   title: Explosive
-  Description: 
+  Description: Your bullet now deals area damage
   rarity: 1
   explosionRadius: 0.5
   explosionDamage: 7

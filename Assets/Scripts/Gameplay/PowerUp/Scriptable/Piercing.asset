@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Piercing
   m_EditorClassIdentifier: 
   title: Piercing
-  Description: 
+  Description: Your bullet go through enemy
   rarity: 0
   pierceCount: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MultiShoot 2
   m_EditorClassIdentifier: 
   title: Multishoot
-  Description: 
+  Description: You shoot multiple times
   rarity: 2
   numberOfShots: 5
   angleSpread: 10

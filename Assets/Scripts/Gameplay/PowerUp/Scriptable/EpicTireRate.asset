@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EpicTireRate
   m_EditorClassIdentifier: 
   title: Tire Rate +++
-  Description: M@CHINE GUN ?!!
+  Description: Increase the fire rate speed - M@CHINE GUN ?!!
   rarity: 2
   attackRateMultiplier: 1.6

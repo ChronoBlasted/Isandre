@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Raffale
   m_EditorClassIdentifier: 
   title: Raffale
-  Description: 
+  Description: Add burst to your shot
   rarity: 0
   burstCount: 2
   timeBetweenShots: 0.01

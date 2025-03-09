@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chain
   m_EditorClassIdentifier: 
   title: Chain
-  Description: 
+  Description: Your bullet jump into the nearest enemy
   rarity: 0
   chainRadius: 2
   chainNumber: 2
