@@ -196,9 +196,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6145274309773640023, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7917265879703108658}
-    - targetCorrespondingSourceObject: {fileID: 6145274309773640023, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 884156608407342977}
   m_SourcePrefab: {fileID: 100100000, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
 --- !u!114 &3555448292582898140 stripped
 MonoBehaviour:
@@ -229,14 +226,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpScript: {fileID: 3555448292582898140}
-  animator: {fileID: 884156608407342977}
-  animatorVisual: {fileID: 3338677245868832395}
+  animator: {fileID: 3338677245868832395}
   Spawner: {fileID: 0}
   exp: {fileID: 0}
   life: {fileID: 0}
   chance: 0
   enemyData: {fileID: 11400000, guid: 027f33166fc73314383401487d08f097, type: 2}
   target: {fileID: 0}
+  isDie: 0
+  addForceOnDieMinMax: {x: 0, y: 0}
+  addForceUpOnDieMinMax: {x: 0, y: 0}
+  addTorqueOnDieMinMax: {x: 0, y: 0}
   attackRadius: 1
   damage: 2
 --- !u!136 &7917265879703108658
@@ -262,28 +262,6 @@ CapsuleCollider:
   m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.4, z: 0}
---- !u!95 &884156608407342977
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072607323970938381}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a98ab7f7f3eff34a9c6ce77b19db878, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &7382349013484911791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5845052050181741557, guid: 188f4a6c9d364074b83e5accbaf783e5, type: 3}
@@ -442,7 +420,7 @@ PrefabInstance:
       addedObject: {fileID: 3338677245868832395}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c6de835eafaa714f856129a9319ed82, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8585701804108739385}
+      addedObject: {fileID: 1490783446161177397}
   m_SourcePrefab: {fileID: 100100000, guid: 5c6de835eafaa714f856129a9319ed82, type: 3}
 --- !u!4 &6965726432055706799 stripped
 Transform:
@@ -476,7 +454,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8585701804108739385
+--- !u!114 &1490783446161177397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -485,7 +463,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7773472322057051669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec13d3542d91bf74eaf4e4ae180d0317, type: 3}
+  m_Script: {fileID: 11500000, guid: d1843b366ffb0114ab790f0feec613d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4372829131451865658}

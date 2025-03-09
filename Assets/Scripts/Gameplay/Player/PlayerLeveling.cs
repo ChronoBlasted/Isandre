@@ -12,10 +12,23 @@ public class PlayerLeveling : MonoBehaviour
     [SerializeField] Vector2 radiusMinMaxSpawnChest;
     [SerializeField] LayerMask layer;
 
+    private void Start()
+    {
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        UIManager.Instance.GameView.PlayerExp.Init(0,xpToLevelUp);
+        UIManager.Instance.GameView.SetLevel(playerLevel);
+    }
 
     public void GainXP(int amount)
     {
         currentXP += amount;
+
+        UIManager.Instance.GameView.PlayerExp.SetValueSmooth(currentXP);
+
         if (currentXP >= xpToLevelUp)
         {
             LevelUp();
@@ -28,6 +41,7 @@ public class PlayerLeveling : MonoBehaviour
         playerLevel++;
         xpToLevelUp = (int)(1.25f * xpToLevelUp);
 
+        UpdateUI();
 
         //Spawn chest
         bool validSpawn = false;

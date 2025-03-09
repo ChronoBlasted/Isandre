@@ -7,7 +7,7 @@ public class Alive : MonoBehaviour
     public int maxLife;
     public UnityEvent dieEvent;
     public UnityEvent hitEvent;
-    public bool Add, Subtract, data;
+    public bool Add, Subtract, data, IsPlayer;
     public MMF_Player dieFeedbacks;
     bool isDie;
 
@@ -25,6 +25,11 @@ public class Alive : MonoBehaviour
     {
         if (!data)
             InitWithoutData();
+
+        if (IsPlayer)
+        {
+            UIManager.Instance.GameView.PlayerHealth.Init(currentLife, maxLife);
+        }
     }
 
     public void Update()
@@ -58,6 +63,11 @@ public class Alive : MonoBehaviour
             Die();
             return;
         }
+
+        if (IsPlayer)
+        {
+            UIManager.Instance.GameView.PlayerHealth.SetValueSmooth(currentLife);
+        }
     }
     public int GetLife()
     {
@@ -81,7 +91,6 @@ public class Alive : MonoBehaviour
     {
         currentLife += -1;
 
-
         if (currentLife <= 0)
         {
             currentLife = 0;
@@ -98,6 +107,11 @@ public class Alive : MonoBehaviour
         isDie = true;
         dieEvent.Invoke();
         if (dieFeedbacks != null) dieFeedbacks.PlayFeedbacks();
+
+        if (IsPlayer)
+        {
+            GameManager.Instance.UpdateStateToEnd();
+        }
     }
 
 }

@@ -20,7 +20,6 @@ public class EnemyMelee : Enemy
         Collider[] hitColliders = Physics.OverlapSphere(transform.position , attackRadius, LayerMask.GetMask("Player"));
         foreach (var hitCollider in hitColliders)
         {
-            print(hitCollider.gameObject.name);
             hitCollider.GetComponent<Alive>().ChangeLife(-damage);
         }
     }    

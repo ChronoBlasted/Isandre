@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class GameView : View
 {
+    public SliderBar PlayerHealth;
+    public SliderBar PlayerExp;
+    public TMP_Text PlayerLevel;
+    public TMP_Text PlayerLevelFade;
+
     public override void Init()
     {
         base.Init();
@@ -18,5 +23,11 @@ public class GameView : View
     public override void CloseView()
     {
         base.CloseView();
+    }
+
+    public void SetLevel(int level)
+    {
+        PlayerLevel.text = "Level : " + (level + 1);
+        PlayerLevelFade.text = "Level : " + (level + 1);
     }
 }

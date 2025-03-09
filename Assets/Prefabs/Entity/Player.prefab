@@ -290,6 +290,7 @@ MonoBehaviour:
   Add: 0
   Subtract: 0
   data: 0
+  IsPlayer: 1
   dieFeedbacks: {fileID: 0}
 --- !u!114 &4134342465189480316
 MonoBehaviour:

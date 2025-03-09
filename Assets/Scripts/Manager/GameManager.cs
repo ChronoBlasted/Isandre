@@ -25,7 +25,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         AudioManager.Instance.Init();
 
-        UpdateStateToMenu();
+        UpdateStateToGame();
     }
 
     void Update()

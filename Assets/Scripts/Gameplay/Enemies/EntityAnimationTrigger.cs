@@ -8,4 +8,9 @@ public class EntityAnimationTrigger : MonoBehaviour
     {
         enemy.Attack();
     }
+
+    public void ChangeStateToMove()
+    {
+        enemy.changeStateToMove();
+    }
 }

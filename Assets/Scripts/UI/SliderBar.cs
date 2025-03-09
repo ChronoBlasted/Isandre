@@ -17,6 +17,8 @@ public class SliderBar : MonoBehaviour
 
     public void Init(float value, float maxValue)
     {
+        KillTweens();
+
         slider.maxValue = maxValue;
         slider.value = value;
 
@@ -26,6 +28,8 @@ public class SliderBar : MonoBehaviour
 
     public void Init(float value)
     {
+        KillTweens();
+
         slider.maxValue = value;
         slider.value = value;
 
@@ -47,6 +51,15 @@ public class SliderBar : MonoBehaviour
 
     public void SetValueSmooth(float newValue, float duration = 0.2f, Ease ease = Ease.OutCirc)
     {
+        KillTweens();
+
+        _fillTween = slider.DOValue(newValue, duration).SetEase(ease);
+
+        _fillWhiteTween = sliderWhite.DOValue(newValue, duration).SetEase(Ease.Linear);
+    }
+
+    private void KillTweens()
+    {
         if (_fillTween != null)
         {
             _fillTween.Kill(true);
@@ -58,10 +71,6 @@ public class SliderBar : MonoBehaviour
             _fillWhiteTween.Kill();
             _fillWhiteTween = null;
         }
-
-        _fillTween = slider.DOValue(newValue, duration).SetEase(ease);
-
-        _fillWhiteTween = sliderWhite.DOValue(newValue, duration).SetEase(Ease.Linear);
     }
 
     public float GetValue()
