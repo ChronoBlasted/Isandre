@@ -4,19 +4,20 @@ using UnityEngine.UI;
 
 public class ToolsPopup : Popup
 {
+    [SerializeField] RectTransform trans;
     [SerializeField] Image icoArrow;
     bool isOpen = false;
 
     public override void OpenPopup()
     {
-        transform.DOMoveX(736, .2f).SetEase(Ease.OutBack);
+        trans.DOAnchorPosX(736, .2f).SetEase(Ease.OutBack);
 
         icoArrow.transform.DORotate(new Vector3(0, 0, 0), .2f);
     }
 
     public override void ClosePopup()
     {
-        transform.DOMoveX(0, .2f).SetEase(Ease.InBack);
+        trans.DOAnchorPosX(0, .2f).SetEase(Ease.InBack);
 
         icoArrow.transform.DORotate(new Vector3(0, 0, 180), .2f);
     }
